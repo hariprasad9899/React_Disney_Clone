@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --CARD_GRADIENT: #030b17;
+}
+
+.topMenu {
+    height: 70px;
+    padding: 30px;
+    justify-content: space-between;
+    color: whitesmoke;
+    background-color: var(--CARD_GRADIENT);
+}
+
+.topMenu, .options-section , .search-option {
+    display: flex;
+    align-items: center;
+}
+
+.burger-btn {
+    
+
+}
+
+.burger-btn span{
+    width: 30px;
+    height: 5px;
+    background-color: lightgray;
+}
+
+.options-section img {
+    width: 120px;
+    height: 120px;
+    margin-top: -10px;
+}

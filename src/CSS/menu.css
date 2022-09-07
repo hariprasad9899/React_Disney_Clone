@@ -1,0 +1,165 @@
+:root {
+    --CARD_GRADIENT: #030b17;
+    --LIGHT_GRAY_FONT: rgb(157, 156, 156);
+}
+
+.topMenu {
+    height: 70px;
+    padding: 40px 40px 40px 40px;
+    justify-content: space-between;
+    color: whitesmoke;
+    background-color: var(--CARD_GRADIENT);
+}
+
+.topMenu, .options-section  {
+    display: flex;
+    align-items: center;
+}
+
+.options-section {
+    gap: 1.5rem;
+}
+
+.nav-options {
+    display: flex;
+    gap: 1.75rem;
+}
+
+.nav-options a:hover, .burger-btn:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.burger-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5px;
+}
+
+.burger-btn span{
+    width: 20px;
+    height: 2.5px;
+    background-color: rgb(157, 156, 156);
+}
+
+.burger-btn span:nth-child(2) {
+    height: 3px;
+}
+
+.options-section img {
+    width: 120px;
+    height: 120px;
+    margin-top: -10px;
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-section input[type="text"] {
+    width: 16rem;
+    padding: 7px;
+    padding-left: 0px;
+    border: none;
+    outline: none;
+    color: rgba(245, 245, 245, 0.76);
+    font-size: 1rem;
+    border-bottom:1px solid rgba(245, 245, 245, 0.76);
+    background-color: var(--CARD_GRADIENT);
+    transition: 0.4s ease;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 18px;
+}
+
+.search-section input[type="text"]::placeholder {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(245, 245, 245, 0.869);
+}
+
+.search-section button {
+    background-color: rgb(81, 148, 249);
+    color: white;
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.search-section button:hover {
+    cursor: pointer;
+}
+
+.login-btn {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: rgb(251, 250, 250);
+}
+
+.login-btn:hover {
+    cursor: pointer;
+}
+
+.nav-options {
+    position: relative;
+}
+
+.popOptions {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    top: 30px;
+    width: 130px;
+    font-size: 0.85rem;
+    color: white;
+    border-radius: 4px;
+    background-color: #334366;
+}
+
+.popOptions a {
+    width: 100%;
+    padding: 10px 5px 10px 10px;
+}
+.popOptions a:hover {
+    background-color: black;
+}
+
+.TV-opt {
+    width: 50%;
+}
+
+.Movies-opt {
+    width: 40%;
+    left: 20%
+}
+
+.Sports-opt {
+    width: 60%;
+    right:-10%;
+}
+@media  screen and (max-width: 1000px) {
+    
+    .nav-options {
+        display: none;
+    }
+
+    .topMenu {
+        height: 50px;
+        padding: 20px;
+    }   
+}
+
+@media  screen and (max-width: 760px) {
+    .search-section button {
+        padding: 3px 10px 3px 10px;
+        font-weight: 500;
+        font-size: 0.6rem;
+    }
+}
