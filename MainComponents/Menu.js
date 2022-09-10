@@ -5,41 +5,53 @@ import GeneratorComponent from "./MenuComponents/GeneratorComponent";
 
 export default function Menu() {
 
+
+    // State to maintain the search input box in the menu
     const [searchInput, setSearchInput] = useState( {
         active: false,
         value: ""
     })
 
+    // Setting the input value of the input search box using state
     function handleSearchInput(e) {
         setSearchInput(prevSearchInput => {
             return { ...prevSearchInput, value: e.target.value,}
         })
     }
 
+    // function that will change the active state, whenever user types something in the search bar
     function handleActive() {
         setSearchInput(prevSearchInput => {
             return { ...prevSearchInput, active: true }
         })
     }
 
+    // function that will change the active state, whenever user stops and moves out from the input box
     function handleInActive() {
         setSearchInput(prevSearchInput => {
             return { ...prevSearchInput,active: false }
         })
     }
 
+
+    // Styling object that will be added to the input box, which make use of active state. So that, whenever user
+    // bottom border will be added and removed 
     let INPUT_STYLE = {
         width: (searchInput.active) ? "25rem":"16rem",
         borderBottom: (searchInput.active) ? "1px solid rgb(106, 149, 243)":"1px solid rgba(245, 245, 245, 0.76)",
         backgroundImage: `url(${'./imgs/searchIcon.svg'})`
     }
 
+
+    // width state to attain responsive using react. 
     const [width,setWidth] = useState(window.innerWidth);
     const updateWidth = () => {
         setWidth(prevWidth => {
             return window.innerWidth
         })
     }
+
+    // Using useEffect() hook, so that whenever the window is resized, the width state value is changed.
     useEffect(() => {
         window.addEventListener("resize", updateWidth);
         return () => {
@@ -47,42 +59,63 @@ export default function Menu() {
         }
     }, [])
 
-
+    // option state to change the visisblity of options once cursor is hovered over the menus
     const [optionsState, setOptionsState] = useState( {
         "TV": false,
         "Movies": false, 
         "Sports": false,
     });
 
-    function  handleMouseOver(option)  {
+    //try
+    function mouseOvered(e) {
+
+        if((e.target.className === "TV") || 
+        (e.target.className === "Movies") || 
+        (e.target.className === "Sports")) {
+            setOptionsState(prevOptionState => {
+                return {
+                    "TV": false,
+                    "Movies": false, 
+                    "Sports": false,
+                    [e.target.className]: true
+                }
+            })
+        }
+    }
+
+    function closePops() {
         setOptionsState(prevOptionState => {
             return {
-                ...prevOptionState,
-                [option]: true
+                "TV": false,
+                "Movies": false, 
+                "Sports": false,
             }
         })
     }
 
-    function  handleMouseOut(option, e)  {
 
-        if(e.target !== "TV-opt") {
-            setOptionsState(prevOptionState => {
-                return {
-                    ...prevOptionState,
-                    [option]: false
-                }
-            })
-        } 
+    useEffect(() => {
 
-        
-    }
-
-
+        function handleOutClick(e){
+            if((e.target.className !== "TV") || 
+            (e.target.className !== "Movies") || 
+            (e.target.className !== "Sports")) {
+                setOptionsState(prevOptionState => {
+                    return {
+                        "TV": false,
+                        "Movies": false, 
+                        "Sports": false,
+                    }
+                })
+            }
+        }
+        window.addEventListener('click', handleOutClick)
+    }, [optionsState])
 
     return (
         <div className="topMenu">
 
-            <div className="options-section">
+            <div className="options-section" onMouseLeave={closePops}>
                 <div className="burger-btn">
                     <span></span>
                     <span></span>
@@ -90,13 +123,22 @@ export default function Menu() {
                 </div>
                 <img src= './imgs/disneyLogo.svg'></img>
                 <nav className="nav-options">
-                    <a onMouseOver={() => handleMouseOver("TV")}  onMouseLeave = {(e) => handleMouseOut("TV",e)}>TV</a>
-                    <a onMouseOver={() => handleMouseOver("Movies")} onMouseLeave = {(e) => handleMouseOut("Movies",e)}>Movies</a>
-                    <a onMouseOver={() => handleMouseOver("Sports")} onMouseLeave = {(e) => handleMouseOut("Sports",e)}>Sports</a>
-                    <a>Disney+</a>
-                    { optionsState.TV && <GeneratorComponent  category = "TV" />}
-                    { optionsState.Movies && <GeneratorComponent  category = "Movies" /> }
-                    { optionsState.Sports && <GeneratorComponent  category = "Sports" />}
+
+                    <li  onMouseEnter={ (e) => mouseOvered(e)} className = "TV">
+                        <a className="TV">TV</a>
+                        { optionsState.TV && <GeneratorComponent  category = "TV" />}
+                    </li>
+
+                    <li  onMouseEnter={ (e) => mouseOvered(e)} className = "Movies">
+                        <a className="Movies" >Movies</a>
+                        { optionsState.Movies && <GeneratorComponent  category = "Movies" /> }
+                    </li>
+
+                    <li  onMouseEnter={ (e) => mouseOvered(e)} className = "Sports">
+                        <a className="Sports" >Sports</a>
+                        { optionsState.Sports && <GeneratorComponent  category = "Sports" />} 
+                    </li>
+
                 </nav>
             </div>
 

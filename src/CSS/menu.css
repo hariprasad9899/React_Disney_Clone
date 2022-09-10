@@ -108,6 +108,14 @@
 
 .nav-options {
     position: relative;
+    /* background-color: aqua; */
+}
+
+.nav-options li {
+    list-style-type: none;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    /* background-color: red; */
 }
 
 .popOptions {
@@ -120,7 +128,9 @@
     font-size: 0.85rem;
     color: white;
     border-radius: 4px;
-    background-color: #334366;
+    background-color: #0f2658;
+    background-color: #192133;
+    /* background-color: #121926; */
 }
 
 .popOptions a {
@@ -132,18 +142,22 @@
 }
 
 .TV-opt {
-    width: 50%;
+    width: 70%;
 }
 
 .Movies-opt {
-    width: 40%;
+    width: 70%;
     left: 20%
 }
 
 .Sports-opt {
-    width: 60%;
-    right:-10%;
+    width: 80%;
+    left: 70%;
 }
+
+
+
+
 @media  screen and (max-width: 1000px) {
     
     .nav-options {

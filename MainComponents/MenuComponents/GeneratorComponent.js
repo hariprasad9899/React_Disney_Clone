@@ -8,6 +8,7 @@ export default function GeneratorComponent({category}) {
         return <a key = {nanoid()}>{item}</a>
     })
 
+
     return (
         <div className= {`${category}-opt popOptions`}>
             {categoryOptions}
