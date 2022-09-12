@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import GeneratorComponent from "./MenuComponents/GeneratorComponent";
+import Channel from "./MenuComponents/Channel";
 
 export default function Menu() {
 
+    // Search Section
+    //______________________________________________________________________________________________________________________________________
 
     // State to maintain the search input box in the menu
     const [searchInput, setSearchInput] = useState( {
@@ -42,8 +45,13 @@ export default function Menu() {
         backgroundImage: `url(${'./imgs/searchIcon.svg'})`
     }
 
+    //______________________________________________________________________________________________________________________________________
+
+    // Responsive Section to hide the Nav options when minimized
+    //______________________________________________________________________________________________________________________________________
 
     // width state to attain responsive using react. 
+
     const [width,setWidth] = useState(window.innerWidth);
     const updateWidth = () => {
         setWidth(prevWidth => {
@@ -59,14 +67,23 @@ export default function Menu() {
         }
     }, [])
 
-    // option state to change the visisblity of options once cursor is hovered over the menus
+    //______________________________________________________________________________________________________________________________________
+
+
+    // States to maintain the Nav Option show/hide. State to change the visisblity of options once cursor is hovered over the menus
+    //______________________________________________________________________________________________________________________________________
+
+    // For NavMenu
     const [optionsState, setOptionsState] = useState( {
         "TV": false,
         "Movies": false, 
         "Sports": false,
     });
 
-    //try
+    // For Burger Menu
+    const [burgerHoverState, setBurgerHoverState] = useState(false);
+
+    // NavMenu Mouse over (also hiding Burger Menu when mouse over to Nav)
     function mouseOvered(e) {
 
         if((e.target.className === "TV") || 
@@ -81,9 +98,17 @@ export default function Menu() {
                 }
             })
         }
+        setBurgerHoverState(false)
     }
 
-    function closePops() {
+    // Burger Menu Mouse over (also hiding Nav Menu when mouse over to burger)
+    function mouseOverBurger(e) {
+        setBurgerHoverState(true)
+        setOptionsState(false)
+    }
+
+    // Closepops for both Nav and Burgermenu
+    function closePops(e) {
         setOptionsState(prevOptionState => {
             return {
                 "TV": false,
@@ -91,9 +116,10 @@ export default function Menu() {
                 "Sports": false,
             }
         })
+        setBurgerHoverState(false);
     }
 
-
+    // Using useEffect hook to close Navmenu and burger menu when user clicked outside
     useEffect(() => {
 
         function handleOutClick(e){
@@ -108,43 +134,52 @@ export default function Menu() {
                     }
                 })
             }
+            if(e.target.className !== "burger-btn") {
+                setBurgerHoverState(false);
+            }
         }
         window.addEventListener('click', handleOutClick)
-    }, [optionsState])
+        return window.removeEventListener('click', handleOutClick)
+    }, [optionsState, burgerHoverState ])
 
 
     return (
         <div className="topMenu">
 
             <div className="options-section" onMouseLeave={closePops}>
-                <div className="burger-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+
+                <div className="burger-btn" onMouseEnter={(e) => mouseOverBurger(e)}>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <Channel  hoverState = {burgerHoverState}/>
                 </div>
+
                 <img src= './imgs/disneyLogo.svg'></img>
+
                 <nav className="nav-options">
 
                     <li  onMouseEnter={ (e) => mouseOvered(e)} className = "TV">
                         <a className="TV">TV</a>
-                        { optionsState.TV && <GeneratorComponent  category = "TV"  categoryState = {optionsState.TV} />}
+                        <GeneratorComponent  category = "TV"  categoryState = {optionsState.TV} />
                     </li>
 
                     <li  onMouseEnter={ (e) => mouseOvered(e)} className = "Movies">
                         <a className="Movies" >Movies</a>
-                        { optionsState.Movies && <GeneratorComponent  category = "Movies" categoryState = {optionsState.Movies} /> }
+                        <GeneratorComponent  category = "Movies" categoryState = {optionsState.Movies} />
                     </li>
 
                     <li  onMouseEnter={ (e) => mouseOvered(e)} className = "Sports">
                         <a className="Sports" >Sports</a>
-                        { optionsState.Sports && <GeneratorComponent  category = "Sports" categoryState = {optionsState.Sports} />} 
+                        <GeneratorComponent  category = "Sports" categoryState = {optionsState.Sports} />
                     </li>
 
-                    <li>
+                    <li onMouseOver={closePops}>
                         <a>Disney+</a>
                     </li>
 
                 </nav>
+
             </div>
 
             <div className="search-section">

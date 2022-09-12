@@ -31,11 +31,13 @@
 }
 
 .burger-btn {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2.5px;
+    
 }
 
 .burger-btn span{
@@ -132,17 +134,15 @@
 }
 
 .fadeOut {
-    top: 100px;
-    opacity: 0;
-    transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+    top: 40px;
+    visibility: hidden;
 }
 
 .fadeIn {
     top:30px;
-    opacity: 1;
-    transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+    visibility: visible;
+    transition: 0.3s ease-in-out;
 }
-
 
 .popOptions a {
     width: 100%;
@@ -154,7 +154,7 @@
 
 .TV-opt {
     width: 50%;
-    left: -10%;
+    left: -5%;
 }
 
 .Movies-opt {
@@ -165,6 +165,57 @@
 .Sports-opt {
     width: 55%;
     left: 40%;
+}
+
+.channel {
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    width: 150px;
+    padding: 10px 0px 10px 0px;
+    background-color: #192133;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(245, 245, 245, 0.91);
+    font-size: 0.8rem;
+}
+
+.channel li {
+    width: 100%;
+    padding: 12px 12px 12px 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: start;
+}
+
+.channel li:hover {
+    background-color: black;
+}
+
+.channelFadeOut {
+    top: 40px;
+    height: 0px;
+    padding: 0px;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.channelFadeOut li {
+    visibility: hidden;
+}
+
+.channelFadeIn {
+    top:30px;
+    height: auto;
+    opacity: 1;
+    padding: 10px 0px 10px 0px;
+    transition: 0.5s ease-in-out;
+}
+
+.channelFadeIn li {
+    visibility: visible;
 }
 
 @media  screen and (max-width: 1000px) {
