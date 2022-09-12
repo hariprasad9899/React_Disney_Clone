@@ -112,6 +112,7 @@ export default function Menu() {
         window.addEventListener('click', handleOutClick)
     }, [optionsState])
 
+
     return (
         <div className="topMenu">
 
@@ -126,17 +127,21 @@ export default function Menu() {
 
                     <li  onMouseEnter={ (e) => mouseOvered(e)} className = "TV">
                         <a className="TV">TV</a>
-                        { optionsState.TV && <GeneratorComponent  category = "TV" />}
+                        { optionsState.TV && <GeneratorComponent  category = "TV"  categoryState = {optionsState.TV} />}
                     </li>
 
                     <li  onMouseEnter={ (e) => mouseOvered(e)} className = "Movies">
                         <a className="Movies" >Movies</a>
-                        { optionsState.Movies && <GeneratorComponent  category = "Movies" /> }
+                        { optionsState.Movies && <GeneratorComponent  category = "Movies" categoryState = {optionsState.Movies} /> }
                     </li>
 
                     <li  onMouseEnter={ (e) => mouseOvered(e)} className = "Sports">
                         <a className="Sports" >Sports</a>
-                        { optionsState.Sports && <GeneratorComponent  category = "Sports" />} 
+                        { optionsState.Sports && <GeneratorComponent  category = "Sports" categoryState = {optionsState.Sports} />} 
+                    </li>
+
+                    <li>
+                        <a>Disney+</a>
                     </li>
 
                 </nav>
