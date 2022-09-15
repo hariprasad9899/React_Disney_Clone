@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import GeneratorComponent from "./MenuComponents/GeneratorComponent";
-import Channel from "./MenuComponents/Channel";
+import GeneratorComponent from './GeneratorComponent';
+import Channel from '../MenuComponents/Channel'
+
+
+// import GeneratorComponent from "./MenuComponents/GeneratorComponent";
+// import Channel from "./MenuComponents/Channel";
 
 export default function Menu() {
 
