@@ -3,27 +3,32 @@ import movieDb from './Data';
 
 export default function Entry(genre) {
 
-    const [movies, setMovies] = useState([{}]);
+    const [movies, setMovies] = useState([]);
+    let trendingMovies = movieDb.trending.names;
+
     useEffect(() => {
 
-        let trendingMovies = movieDb.trending.names;
+        async function getMoviePoster(movieName){
+            let response = await fetch(`http://www.omdbapi.com/?t=${movieName}&apikey=f2a05d22`);
+            let jsonResponse = await response.json();
+            return jsonResponse.Poster;
+        }
 
-        setMovies(prevMovies => {
-            
-            
-
+        let newMovies = trendingMovies.map(item => {
+            return getMoviePoster(item)
         })
 
-        fetch(`http://www.omdbapi.com/?t=${trendingMovies[2]}&apikey=f2a05d22`)
-        .then(response => response.json())
-        .then(response => setMovies(response.Poster))
+        console.log(newMovies)
 
-
+        // fetch(`http://www.omdbapi.com/?t=${trendingMovies[0]}&apikey=f2a05d22`)
+        // .then(response => response.json())
+        // .then(response => setMovies(response.Poster))
+        
     }, [])
 
     
     return (
-        <img src = {movies}></img>
+        <img src = ""></img>
     )
 
 
