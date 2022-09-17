@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { nanoid } from 'nanoid';
 import movieDb from "../APIData/Data";
+import MovieCard from "./MovieCard";
 
 export default function Movies({genre}) {
 
@@ -22,13 +23,20 @@ export default function Movies({genre}) {
     }, [])
 
 
-    let moviesJSX = movies.map(item => {
-        return <img src = {item.Poster} key = {nanoid()} ></img>
+    let MOVIESJSX = movies.map(item => {    
+        return (
+            <MovieCard movieInfo = {item} key = {nanoid()}
+        />)
     })
 
     return (
-        <>
-            { (loadState) ? <h1>Loading</h1> : moviesJSX }
-        </>
+
+        <div className="movie-container">
+            <a>{movieDb[genre].title}</a>
+            <div className = {`genre-${genre}`}>
+                { (loadState) ? <h1>Loading</h1> : MOVIESJSX }
+            </div>
+        </div>
+        
     )
 }

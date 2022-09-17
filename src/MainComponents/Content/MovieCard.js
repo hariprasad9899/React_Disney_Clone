@@ -2,8 +2,12 @@ import React from "react";
 
 export default function MovieCard({movieInfo}){
 
-    <div className="movieCard">
-        <h3>{JSON.stringify(movieInfo)}</h3>
-    </div>
+    
+
+    return (
+        <div className="movieCard">
+            <p>{JSON.stringify(movieInfo)}</p>
+        </div>
+    )
 
 }
