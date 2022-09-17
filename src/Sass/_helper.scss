@@ -1,0 +1,34 @@
+@mixin  flexFiller($dir,$adir,$jdir,$gapVal) {
+    display: flex;
+    flex-direction: $dir;
+    align-items: $adir;
+    justify-content: $jdir;
+    gap: $gapVal;
+}
+
+@mixin flexCen() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin width-height($w,$h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin  cursorHover($color) {
+    cursor: pointer;
+    color: $color;
+}
+
+@mixin  searchBG($bgColor,$bgPos,$bgRep,$bgSize) {
+    background-color: $bgColor;
+    background-position: $bgPos;
+    background-repeat: $bgRep;
+    background-size: $bgSize;
+}
+
+@mixin font-size-weight($size,$weight) {
+    font-size: $size;
+    font-weight: $weight;
+}

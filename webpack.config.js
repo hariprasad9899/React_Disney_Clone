@@ -32,15 +32,29 @@ module.exports = {
                     }
                 },
             },
+
             {
                 test: /.css$/,
                 exclude: /node_modules/,
                 use: [CSSWebpackPlugin.loader, 'css-loader'],
             },
+
+            {
+                test: /.scss$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'sass-loader',
+                    options: {
+                        sourceMap: true,
+                    }
+                }
+            },
+
             {
                 test: /\.svg$/,
                 loader: 'svg-inline-loader'
             }
+            
         ]
     }
 }

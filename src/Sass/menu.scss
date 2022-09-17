@@ -1,0 +1,262 @@
+@import './helper';
+
+$CARD_GRADIENT: #030b17;
+$LIGHT_GRAY_FONT: rgb(157, 156, 156);
+$SEACRCHBOX:rgba(245, 245, 245, 0.76);
+.topMenu {
+    height: 70px;
+    padding: 40px 40px 40px 40px;
+    justify-content: space-between;
+    color: whitesmoke;
+    background-color: $CARD_GRADIENT;
+}
+
+.topMenu, .options-section  {
+    @include flexCen()
+}
+
+.options-section {
+    gap: 1.5rem;
+}
+
+.nav-options {
+    @include flexFiller(row,flex-start,flex-start,1.75rem) 
+}
+
+.nav-options {
+    a:hover {
+        @include cursorHover(white);
+    }
+    .burger-btn:hover {
+        @include cursorHover(white);
+    }
+}
+
+.burger-btn {
+    position: relative;
+    @include flexFiller(column,center,center,2.5px)    
+}
+
+.burger-btn {
+    span {
+        @include width-height(20px,2.5px);
+        background-color: $LIGHT_GRAY_FONT;
+    }
+}
+
+.burger-btn span:nth-child(2) {
+    height: 3px;
+}
+
+.options-section  {
+    img {
+        @include width-height(120px,120px);
+        margin-top: -10px;
+    }
+    
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-section  {
+    input[type="text"]  {
+
+        width: 16rem;
+        padding: 7px;
+        padding-left: 0px;
+        border: none;
+        outline: none;
+        color: $SEACRCHBOX;
+        font-size: 1rem;
+        border-bottom:1px solid $SEACRCHBOX;
+        transition: 0.4s ease;
+        @include searchBG($CARD_GRADIENT,right,no-repeat,18px)
+    }
+}
+
+.search-section  {
+
+    input[type="text"]::placeholder {
+        color: rgba(245, 245, 245, 0.869);
+        font: {
+            family: 'Inter', sans-serif;
+            size: 1rem;
+            weight: 400;
+        }
+    }
+}
+
+.search-section {
+    
+    button {
+        background-color: rgb(81, 148, 249);
+        color: white;
+        padding: 5px 15px 5px 15px;
+        border-radius: 5px;
+        font: {
+            weight: 600;
+            size: 0.7rem;
+        }
+    }
+    
+}
+
+.search-section {
+    button {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+}
+
+.login-btn {
+    @include font-size-weight(0.9rem,500);
+    color: rgb(251, 250, 250);
+}
+
+.login-btn:hover {
+    cursor: pointer;
+}
+
+.nav-options {
+    position: relative;
+}
+
+.nav-options {
+    li {
+        list-style-type: none;
+    }
+}
+
+.popOptions {
+    position: absolute;
+    @include flexFiller(column,flex-start,flex-start,3px);
+    width: 130px;
+    font-size: 0.85rem;
+    color: white;
+    border-radius: 4px;
+    background-color: #0f2658;
+    background-color: #192133;
+}
+
+.fadeOut {
+    top: 40px;
+    visibility: hidden;
+}
+
+.fadeIn {
+    top:30px;
+    visibility: visible;
+    transition: 0.3s ease-in-out;
+}
+
+.popOptions {
+    a {
+        width: 100%;
+        padding: 10px 5px 10px 10px;
+    }
+}
+.popOptions {
+    a:hover {
+        background-color: black;
+    }
+}
+
+@mixin width-left($width,$left) {
+    width: $width;
+    left: $left;
+}
+
+.TV-opt {
+    @include width-left(50%,-5%);
+}
+
+.Movies-opt {
+    @include width-left(50%,10%);
+}
+
+.Sports-opt {
+    @include width-left(55%,40%);
+}
+
+.channel {
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    width: 150px;
+    padding: 10px 0px 10px 0px;
+    background-color: #192133;
+    @include flexFiller(column,flex-start,center,0px);
+    color: rgba(245, 245, 245, 0.91);
+    font-size: 0.8rem;
+}
+
+.channel {
+    li {    
+        width: 100%;
+        padding: 12px 12px 12px 20px;
+        @include flexFiller(row,center,flex-start,30px);
+    }
+    
+}
+
+.channel {
+    li:hover {
+        background-color: black;
+    }
+}
+
+.channelFadeOut {
+    top: 40px;
+    height: 0px;
+    padding: 0px;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.channelFadeOut {
+    li {
+        visibility: hidden;
+    }
+}
+
+.channelFadeIn {
+    top:30px;
+    height: auto;
+    opacity: 1;
+    padding: 10px 0px 10px 0px;
+    transition: 0.5s ease-in-out;
+}
+
+.channelFadeIn {
+    li {
+        visibility: visible;
+    }
+    
+}
+
+@media  screen and (max-width: 1000px) {
+    
+    .nav-options {
+        display: none;
+    }
+
+    .topMenu {
+        height: 50px;
+        padding: 20px;
+    }   
+}
+
+@media  screen and (max-width: 760px) {
+    .search-section  {
+        button {
+            padding: 3px 10px 3px 10px;
+            @include font-size-weight(500,0.6rem);
+        } 
+    }
+}
