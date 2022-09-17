@@ -2,16 +2,15 @@ import React, {useState, useEffect} from "react";
 import { nanoid } from 'nanoid';
 import movieDb from "../APIData/Data";
 
-export default function Entry(genre) {
+export default function Movies({genre}) {
 
     const [movies, setMovies] = useState([]);
     const [loadState, setLoadState] = useState(true);
-    let trendingMovies = movieDb.trending.names;
-
+    let selectedGenre = movieDb[genre].names;
 
     useEffect(() => {
         
-        trendingMovies.forEach(async item => {
+        selectedGenre.forEach(async item => {
             let res = await fetch(`http://www.omdbapi.com/?t=${item}&apikey=f2a05d22`);
             let data = await res.json();
             setMovies(prevMovies => {

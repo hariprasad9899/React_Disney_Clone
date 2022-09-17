@@ -1,10 +1,14 @@
 import React from "react";
-import Entry from "../APIData/Entry";
+import Movies from "./TrendingMovies";
 
 export default function Content() {
 
 
     return (
-        <Entry />
+        <>
+            <Movies  genre = {"trending"} />
+            <Movies  genre = {"recommended"} />
+        </>
+        
     )
 }
