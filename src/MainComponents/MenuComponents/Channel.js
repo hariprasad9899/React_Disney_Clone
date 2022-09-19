@@ -7,7 +7,7 @@ import { faMasksTheater } from '@fortawesome/free-solid-svg-icons';
 export default function Channel({hoverState,onmouseOutBurger}) {
 
     return (
-        <div className= {(hoverState) ? "channel channelFadeIn": "channel channelFadeOut"}>
+        <div className= { `channel ${(hoverState) ? "channelFadeIn": "channelFadeOut"}`}>
             <li>
                 <a><FontAwesomeIcon icon={faTv} /></a>
                 <a>Channels</a>
