@@ -13,10 +13,15 @@
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 :root {
     --CARD_GRADIENT: #030b17;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .topMenu {

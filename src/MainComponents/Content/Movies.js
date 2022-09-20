@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { nanoid } from 'nanoid';
 import movieDb from "../APIData/Data";
 import MovieCard from "./MovieCard";
+import '../../Sass/movie.scss';
 
 export default function Movies({genre}) {
 
@@ -33,7 +34,7 @@ export default function Movies({genre}) {
 
         <div className="movie-container">
             <a>{movieDb[genre].title}</a>
-            <div className = {`genre-${genre}`}>
+            <div className = {`movieList genre-${genre} `}>
                 { (loadState) ? <h1>Loading</h1> : MOVIESJSX }
             </div>
         </div>

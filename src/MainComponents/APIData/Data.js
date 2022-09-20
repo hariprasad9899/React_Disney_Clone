@@ -1,12 +1,12 @@
 const movieDb = {
 
     "trending": {
-        names: ["Fall","Sita Ramam","Top Gun: Maverick","Vikram","Vikrant Rona"],
+        names: ["A Thursday","Sita Ramam","Top Gun: Maverick","Vikram","Vikrant Rona","RRR"],
         title: "Latest & Trending"
     },
 
     "recommended": {
-        names: ["Chhichhore","Housefull","MS Dhoni","Super 30"],
+        names: ["Chhichhore","Housefull","MS Dhoni","Super 30","Bigil"],
         "title": "Movies Recommended For You"
     }
 

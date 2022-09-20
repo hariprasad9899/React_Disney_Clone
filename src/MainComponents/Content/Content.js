@@ -1,5 +1,6 @@
 import React from "react";
 import Movies from "./Movies";
+import '../../Sass/movie.scss';
 
 export default function Content() {
 
