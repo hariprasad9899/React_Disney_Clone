@@ -12,7 +12,7 @@ export default function MovieCard({movieInfo}){
 
     function trimMoviePlot(plotData){
         let moviePlotArr = plotData.split(' ').slice(0,10).join(' ');
-        return moviePlotArr + ' ...';
+        return moviePlotArr + '...';
     }
 
     return (
