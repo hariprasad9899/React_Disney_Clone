@@ -1,5 +1,10 @@
 @import './helper';
 @import './basic';
+$CARD_GRADIENT: #030b17;
+$LIGHT_GRAY_FONT: rgb(157, 156, 156);
+$SEACRCHBOX:rgba(245, 245, 245, 0.76);
+$BTNBACKGROUND: rgba(133, 133, 133, 0.322);
+$WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
 
 
 .content-container {
@@ -61,6 +66,7 @@
     bottom: 0;
     opacity: 0;
     padding: 5px;
+    padding-left: 8px;
     transition: 0.2s ease;
     transition-delay: 0.2s;
     background-color: #192133;
@@ -71,8 +77,87 @@
     .movieName,.movieDetails,.moviePlot {
         font-size: 0.6rem;
     }
-
 }
+
+.cardBtns {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    border-radius: 2px;
+    height: 20px;
+    font-size: 0.5rem;
+    gap: 0.5rem;
+    color: $LIGHT_GRAY_FONT;
+    padding-left: 8px;
+    p {
+        font-weight: 600;
+    }
+    &:hover {
+        background-color:$WATCHBACKGROUND;
+    }
+}
+
+.watchList {
+    margin-top: 1px;
+}
+
+.removeWatch {
+    font-size: 0.5rem;
+    width: 95%;
+    padding: 2px 0px 1px 3px;
+    color: $LIGHT_GRAY_FONT;
+    border-radius: 3px;
+    p {
+        font-weight: 600;
+        margin-top: 10px;
+    }
+    .blueTick {
+        color: rgb(0, 153, 255);
+    }
+    &:hover {
+        background-color: $WATCHBACKGROUND;
+    }
+}
+
+.watchedPopup {
+    position: absolute;
+    width: 25%;
+    top: 100vh;
+    left: 50%;
+    z-index: 1000;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 40px;    
+    letter-spacing: 0.6px;
+    background-color:#192133f0;
+}
+
+.showPopup {
+    animation-name: slowlyShow;
+    animation-duration: 1.5s;
+}
+
+.hidePopup {
+    animation-name: slowlyHide;
+    animation-duration: 1.5s;
+}
+
+@keyframes slowlyShow {
+    0%{ top: 90vh; opacity: 0;}
+    50%{top: 85vh; opacity: 1;}
+    100% {top: 90vh; opacity: 0;}
+}
+
+@keyframes slowlyHide {
+    0%{ top: 90vh; opacity: 0;}
+    50%{top: 85vh; opacity: 1;}
+    100% {top: 90vh; opacity: 0;}
+}
+
 
 @media screen and (max-width:2000px) {
     .movieCard {
