@@ -43,6 +43,7 @@ export default function MovieCard({movieInfo}){
     return (
         <div className="movieCard"  style={CARD_STYLE} >
             <div className="infoCard">
+
                 <p className="movieName">{movieInfo.Title}</p>
                 <p className="movieDetails">{movieInfo.Runtime},{movieInfo.Genre},{movieInfo.Language}</p>
                 <p className="moviePlot">{trimMoviePlot(movieInfo.Plot)}</p>
@@ -66,6 +67,7 @@ export default function MovieCard({movieInfo}){
                         <p>REMOVE FROM WATCHLIST</p>
                     </div>
                 }
+                
             </div>
             { popupState && <PopupPortal added = {watchListState} visibleState={watchListState} /> }
         </div>   

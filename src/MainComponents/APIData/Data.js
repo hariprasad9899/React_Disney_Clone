@@ -1,7 +1,8 @@
 const movieDb = {
 
     "trending": {
-        names: ["A Thursday","Sita Ramam","Top Gun: Maverick","Vikram","Vikrant Rona","RRR","Liger"],
+        names: ["A Thursday","Sita Ramam","Top Gun: Maverick","Vikram","Vikrant Rona",
+        "RRR","Liger","Shawshank Redemption","Triangle", "Dunkirk","Sketch"],
         title: "Latest & Trending"
     },
 

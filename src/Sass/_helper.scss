@@ -32,3 +32,10 @@
     font-size: $size;
     font-weight: $weight;
 }
+
+@mixin setBackground($setRep,$setPosX,$setPosY,$setSize) {
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+}

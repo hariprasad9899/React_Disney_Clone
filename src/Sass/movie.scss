@@ -11,22 +11,24 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 20px;
+    padding: 20px;  
     background-color: #192133;
     background-color: #0c111b;
     color: white;
     font-weight:500;
     font-family: 'Inter', sans-serif;
-}
-
+    // overflow-x: hidden;
+}   
 
 .movie-container {
-    @include flexFiller(column,flex-start,flex-start,18px)
+    @include flexFiller(column,flex-start,flex-start,18px);
+    position: relative;
 }
 
 .movieList {
     @include flexFiller(row,center,center,15px);
     height: auto;
+    // position: relative;
 }
 
 .movieCard {
@@ -37,10 +39,7 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
     background-color: rgb(37, 48, 127);
     transition: 0.5s ease;
     border-radius: 10px;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    background-size: cover;
+    @include setBackground(no-repeat,center,center,cover);
     .poster {
         position: absolute;
         width: 100%;
@@ -50,13 +49,16 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
     &:hover {
         cursor: pointer;
         transform: scale(1.25);
-        z-index: 5;
+        z-index: 102;
         transition: 0.3s ease;
         transition-delay: 0.2s;
-
         .infoCard {
             opacity: 1;
         }
+    }
+    .moviePlot {
+        color: $LIGHT_GRAY_FONT;
+        font-weight: 500;
     }
 } 
 
@@ -73,7 +75,6 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
     background: linear-gradient(transparent,#192133 40%);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
     .movieName,.movieDetails,.moviePlot {
         font-size: 0.6rem;
     }
@@ -158,6 +159,28 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
     100% {top: 90vh; opacity: 0;}
 }
 
+.scElem {
+    z-index: 101;
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    @include flexFiller(column,center,center,0px);
+    background-color: rgba(0, 0, 0, 0.597);
+    font-size: 1.5rem;
+    transition: 0.8s ease;
+    user-select: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.scrollLeft {
+    left: 0;
+}
+
+.scrollRight {
+    left: 94.5vw;
+}
 
 @media screen and (max-width:2000px) {
     .movieCard {
