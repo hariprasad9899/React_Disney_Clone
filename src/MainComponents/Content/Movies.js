@@ -36,7 +36,7 @@ export default function Movies({genre}) {
     })
 
 
-    const [scrollBtnView, setScrollBtnView] = useState(false)
+    const [scrollBtnView, setScrollBtnView] = useState(false);
 
     function showScrollBtns(){
         setScrollBtnView(true)
@@ -46,19 +46,17 @@ export default function Movies({genre}) {
         setScrollBtnView(false)
     }
 
-    
-
-    const ListContainer = useRef(null)
+    const ListContainer = useRef(null);
 
     function scrollLeft(){
         if(ListContainer.current) {
-            ListContainer.current.scrollLeft += 300;
+            ListContainer.current.scrollLeft -= 1500;
         }
     }
 
     function scrollRight(){
         if(ListContainer.current){
-            ListContainer.current.scrollLeft += 300;
+            ListContainer.current.scrollLeft += 1500;
         }
     }
 
@@ -68,28 +66,30 @@ export default function Movies({genre}) {
 
     return (
 
-        <div className="movie-container" >
+        <div className="movie-container" ref = {ListContainer}>
             <a>{movieDb[genre].title}</a>
             
-            <div className = {`movieList genre-${genre}`} 
-                onMouseOver={showScrollBtns} 
-                onMouseLeave = {hideScrollBtns} 
-                ref = {ListContainer}>
-                
-                
+            <div className="scrollWrapper" onMouseOver={showScrollBtns}  onMouseLeave = {hideScrollBtns} >
+
                 <div className="scrollLeft scElem" style={SCROLLBTNSTYLE} onClick = {scrollLeft} >
                     <FontAwesomeIcon  icon={faLessThan}/>
                 </div>
-                
 
-                { (loadState) ? <h1>Loading</h1> : MOVIESJSX }
-           
-                <div className="scrollRight scElem" style={SCROLLBTNSTYLE} onClick = {scrollRight}>
-                    <FontAwesomeIcon  icon={faGreaterThan}/>
+                <div className = {`movieList genre-${genre}`} > 
+
+                    { (loadState) ? <h1>Loading</h1> : MOVIESJSX }
+
                 </div>
                 
-                
+                {/* <div className="scrollRight scElem" style={SCROLLBTNSTYLE} onClick = {scrollRight}>
+                    <FontAwesomeIcon  icon={faGreaterThan}/>
+                </div> */}
+
+
             </div>
+            
+            
+
         </div>
         
     )
