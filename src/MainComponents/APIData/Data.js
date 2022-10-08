@@ -13,11 +13,8 @@ const movieDb = {
     },
 
     'new': {
-        names: ['The Thief','Prey','Cousins','Bhaskar Bechain','Rocky','The Last Letter','On Duty','Mauka'
-                ],
-
-                // ['The Thief','Prey','Pita','Cousins','Bhaskar Bechain','Rocky','The Last Letter','Goltu','On Duty','Mauka',
-                // 'Unacceptable','Crush','Charitra Varnan','The Pilgrim','Bengal Tiger']
+        names: ['The Thief','Prey','Cousins','Bhaskar Bechain','Rocky','The Last Letter','On Duty','Roar','Predator',
+                'Batman','Superman','Man of Steel'],
         'title': 'New on Disney+Hotstar'
     }
 

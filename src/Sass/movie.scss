@@ -175,9 +175,9 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
 }
 
 .watchedPopup {
-    position: absolute;
+    position: fixed;
     width: 25%;
-    top: 100vh;
+    top: 80%;
     left: 50%;
     z-index: 1000;
     transform: translate(-50%,-50%);

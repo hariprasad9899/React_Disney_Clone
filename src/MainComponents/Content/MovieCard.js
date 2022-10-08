@@ -6,7 +6,7 @@ import { faL, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import PopupPortal from "./PopupPortal";
-
+import runtime from "../Helpers/runtime";
 
 export default function MovieCard({movieInfo}){
 
@@ -45,12 +45,13 @@ export default function MovieCard({movieInfo}){
             <div className="infoCard">
 
                 <p className="movieName">{movieInfo.Title}</p>
-                <p className="movieDetails">{movieInfo.Runtime},{movieInfo.Genre},{movieInfo.Language}</p>
+                <p className="movieDetails">{runtime(movieInfo.Runtime)},{movieInfo.Genre},{movieInfo.Language}</p>
                 <p className="moviePlot">{trimMoviePlot(movieInfo.Plot)}</p>
                 <div className="cardBtns playButton">
                     <FontAwesomeIcon icon={faPlay} />
                     <p>WATCH MOVIE</p>
                 </div>
+                
                 {
 
                     (watchListState) ? 
