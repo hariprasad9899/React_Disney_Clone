@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import './Sass/index.scss';
+import './Sass/slick-carousel/slick/slick.scss';
+import './Sass/slick-carousel/slick/slick-theme.scss';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

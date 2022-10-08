@@ -9,6 +9,7 @@ export default function Content() {
         <div className="content-container">
             <Movies  genre = {"trending"} />
             <Movies  genre = {"recommended"} />
+            <Movies  genre = {"new"} />
         </div>
     )
 }

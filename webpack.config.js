@@ -36,7 +36,7 @@ module.exports = {
             {
                 test: /.css$/,
                 exclude: /node_modules/,
-                use: [CSSWebpackPlugin.loader, 'css-loader'],
+                use: [CSSWebpackPlugin.loader,'css-loader'],
             },
 
             {

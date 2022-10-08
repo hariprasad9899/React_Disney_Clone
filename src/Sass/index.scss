@@ -17,6 +17,7 @@
 html {
     width: 100%;
     scroll-behavior: smooth;
+    background-color: #0c111b;
 }
 
 body {
@@ -25,9 +26,9 @@ body {
     width: 100%;
 }
 
-// body::-webkit-scrollbar {
-//     display: none;
-// }
+body::-webkit-scrollbar {
+    display: none;
+}
 
 :root {
     --CARD_GRADIENT: #030b17;

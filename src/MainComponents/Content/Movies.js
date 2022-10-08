@@ -5,15 +5,15 @@ import MovieCard from "./MovieCard";
 import '../../Sass/movie.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
-import {ScrollMenu} from 'react-horizontal-scrolling-menu';
+import Slider from "react-slick";
+
+
 
 export default function Movies({genre}) {
 
     const [movies, setMovies] = useState([]);
     const [loadState, setLoadState] = useState(true);
     let selectedGenre = movieDb[genre].names;
-
-
 
 
     useEffect(() => {
@@ -64,33 +64,88 @@ export default function Movies({genre}) {
         opacity: (scrollBtnView) ? "1" : "0",
     }
 
+
+    // Slick Slider // 
+
+    function SampleNextArrow(props) {
+        const { className, style, onClick } = props;
+        return (
+            <div
+            className={className}
+            onClick={onClick}
+            />
+        );
+    }
+
+    function SamplePrevArrow(props) {
+        const { className, style, onClick } = props;
+        return (
+            <div
+            className={className}
+            onClick={onClick}
+            />
+        );
+    }
+
+    const settings = {
+        dots: false,
+        infinite: false,
+        arrows: true,
+        speed: 1000,
+        slidesToShow: 7.15,
+        slidesToScroll: 6,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+                }
+            },
+
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+        ],
+
+        nextArrow: <SampleNextArrow className = "btns" />,
+        prevArrow: <SamplePrevArrow className = "btns" />
+    };
+      
     return (
 
         <div className="movie-container" ref = {ListContainer}>
-            <a>{movieDb[genre].title}</a>
-            
-            <div className="scrollWrapper" onMouseOver={showScrollBtns}  onMouseLeave = {hideScrollBtns} >
-
-                <div className="scrollLeft scElem" style={SCROLLBTNSTYLE} onClick = {scrollLeft} >
-                    <FontAwesomeIcon  icon={faLessThan}/>
-                </div>
-
+            <a className="genTitle">{movieDb[genre].title}</a>
                 <div className = {`movieList genre-${genre}`} > 
-
-                    { (loadState) ? <h1>Loading</h1> : MOVIESJSX }
+                    
+                    <Slider {...settings}>
+                        { (loadState) ? <h1>Loading</h1> : MOVIESJSX }
+                    </Slider>
 
                 </div>
-                
-                {/* <div className="scrollRight scElem" style={SCROLLBTNSTYLE} onClick = {scrollRight}>
-                    <FontAwesomeIcon  icon={faGreaterThan}/>
-                </div> */}
-
-
-            </div>
-            
-            
-
         </div>
-        
     )
 }
