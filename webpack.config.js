@@ -13,6 +13,12 @@ module.exports = {
         filename: "bundle.js",
     },
 
+    devServer: {
+        port: 3000,
+        historyApiFallback: true
+    },
+
+
     plugins: [
         new HTMLWebpackPlugin( {
             template: './src/index.html',
