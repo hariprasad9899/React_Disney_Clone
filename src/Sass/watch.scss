@@ -1,20 +1,48 @@
+@import './helper';
+
 .watchContent {
     height: 100vh;
 }
 
-
 .watchFlexCard {
     width: 95%;
     margin: 0 auto;
-    height: 400px;
+    min-height: 400px;
     color: white;
     border-radius: 5px;
+    position: relative;
     border: 1px solid white;
-    background: linear-gradient(red,yellow);
+    background: linear-gradient(to right,transparent,#192133 150%);
+
     .watchFlexContent {
-        padding: 5% 40% 5% 5%;
+        padding: 5% 50% 5% 5%;
+       
         .addPlot {
             padding-right: 5%;
+        }
+        .posterImg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+        }
+
+        .addInfo {
+            @include flexFiller(row,center,flex-start,8px);
+            color: rgb(229, 226, 226);
+            font-size: 1rem;
+            font-weight: 500;
+
+            .bull {
+                font-weight: normal;
+                font-size: 0.7rem;
+            }
+        }
+
+        .addPlot {
+            color: whitesmoke;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
     }    
 }

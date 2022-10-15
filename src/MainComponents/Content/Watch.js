@@ -5,8 +5,8 @@ import WatchFlex from "./WatchFlex";
 
 export default function Watch(){
 
-    // const {imdbID} = useParams();
-    const imdbID = 'tt4169250';
+    const {imdbID} = useParams();
+    // const imdbID = 'tt4169250';
     const [movieInfo, setMovieInfo] = useState('');
 
 
