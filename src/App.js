@@ -9,7 +9,7 @@ export default function App() {
         <>
             <Menu />
             <Routes>
-                <Route path='/' element = {<Home />}></Route>
+                <Route path='/' element = {<Watch />}></Route>
                 <Route path='/watch' element = {<Watch />}>
                     <Route path= ':imdbID' element = {<Watch />} />
                 </Route>

@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import '../../Sass/watch.scss';
 import runtime from "../Helpers/runtime";
+import WatchOptions from "./WatchOptions";
+
+
+
+
+
 export default function WatchFlex({info}){
+
+
 
     
     return (
@@ -27,6 +35,8 @@ export default function WatchFlex({info}){
                     <p>{info.Plot}</p>
                 </div>
             </div>
+
+            <WatchOptions />
 
         </div>
     )

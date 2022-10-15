@@ -48,3 +48,59 @@
         }
     }    
 }
+
+
+.addOptions {
+    width: 70%;
+    padding-left: 5%;
+    user-select: none;
+    color: rgb(229, 226, 226);
+    @include flexFiller(row,center,space-between,10px);
+
+    .watchBtn {
+        margin-right: auto;
+        @include flexFiller(row,center,center,30px);
+        font-weight: 400;
+        &:hover {
+            cursor: pointer;
+            color: white;
+        }
+    }
+
+    .addBtn {
+        color: white;
+        @include flexFiller(column,center,center,0px);
+        font-size: 0.8rem;
+        .addFont {
+            font-size: 1.5rem;
+        }
+        .check {
+            color: dodgerblue;
+        }
+        p {
+            font-size: 0.6rem;
+            margin-top: 3px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .shareBtn {
+        color: white;
+        margin-right: auto;
+        margin-left: 50px;
+        @include flexFiller(column,center,center,0px);
+        font-size: 0.8rem;
+        .shareFont {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 0.6rem;
+            margin-top: 3px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
