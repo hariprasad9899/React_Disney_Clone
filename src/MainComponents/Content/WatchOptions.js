@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import ReactDOM  from "react-dom/client";
 import PopupPortal from "./PopupPortal";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faShareNodes, faPlay, faAdd, faCheck  } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookSquare, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faShareNodes, faPlay, faAdd, faCheck , faLink} from '@fortawesome/free-solid-svg-icons';
 
 export default function WatchOptions(){
 
     const [watchState, setWatchState] = useState(false);
     const [watchListState, setWatchListState] = useState(true);
     const [popupState, setPopupState] = useState(false);
+    const [navState, setNavState] = useState(false);
     
     const addWatchlist = (e) => {
         setWatchState(prevVal => !prevVal)
@@ -31,6 +33,12 @@ export default function WatchOptions(){
     }
 
 
+    let NAVSTLYE = {
+        right: (navState) ? '25%' : '20%',
+        opacity: (navState) ? '1' : '0',
+        visibility: (navState) ? 'visible': 'hidden',
+    }
+
     return (
         <div className="addOptions">
 
@@ -48,9 +56,16 @@ export default function WatchOptions(){
                     <p>WATCHLIST</p>
                 </a>
 
-                <a className="shareBtn">
-                    <FontAwesomeIcon className="shareFont"  icon={faShareNodes} /> 
+                <a className="shareBtn" onMouseOver = {() => setNavState(true)} onMouseLeave = {() => setNavState(false)}>
+                    <FontAwesomeIcon className="shareFont"  icon={faShareNodes}  /> 
                     <p>SHARE</p>
+
+                    <nav className="socialNav" style={NAVSTLYE}>
+                        <a><FontAwesomeIcon className="soc" icon={faFacebookSquare} /></a>
+                        <a><FontAwesomeIcon className="soc" icon={faTwitter} /></a>
+                        <a><FontAwesomeIcon className="soc" icon={faLink} /></a>
+                    </nav>
+
                 </a>
 
                 { popupState && <PopupPortal added = {!watchListState} visibleState={!watchListState} /> }

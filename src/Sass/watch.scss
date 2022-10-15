@@ -12,8 +12,6 @@
     color: white;
     border-radius: 5px;
     position: relative;
-    // border: 1px solid white;
-    // background: linear-gradient(to right,transparent,#192133 150%);
     background: linear-gradient(to right,transparent,#2b3755 150%);
 
     .watchFlexContent {
@@ -54,6 +52,7 @@
     width: 70%;
     padding-left: 5%;
     user-select: none;
+    position: relative;
     color: rgb(229, 226, 226);
     @include flexFiller(row,center,space-between,10px);
 
@@ -102,5 +101,26 @@
         &:hover {
             cursor: pointer;
         }
+        .socialNav {
+            position: absolute;
+            bottom: -40px;
+            right: 20%;
+            padding: 20px 8px 20px 8px;
+            min-width: 190px;
+            height: 30px;
+            border-radius: 8px;
+            @include flexFiller(row,center,center,35px);
+            background-color: #2b3755;
+            transition: 0.5s ease;
+            a {
+                .soc {
+                    font-size: 1.6rem;
+                    color: rgb(229, 226, 226);
+                }
+                
+            }
+            
+        }
     }
 }
+
