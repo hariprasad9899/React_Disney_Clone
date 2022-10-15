@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../../Sass/watch.scss';
 import runtime from "../Helpers/runtime";
 import WatchOptions from "./WatchOptions";
-
+import shortenPara from "../Helpers/ShortenPara";
 
 
 
@@ -32,7 +32,7 @@ export default function WatchFlex({info}){
                 </div>
 
                 <div className="addPlot">
-                    <p>{info.Plot}</p>
+                    <p>{shortenPara(info.Plot)}</p>
                 </div>
             </div>
 

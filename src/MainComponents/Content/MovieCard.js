@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM  from "react-dom/client";
 import '../../Sass/movie.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -49,9 +49,8 @@ export default function MovieCard({movieInfo}){
     const navigateToWatch = (e) => {
         console.log(e.target);
         if(e.target.className !== 'watchList' && e.target.className !== 'playButton') {
-            navigate(`/watch/${movieInfo.imdbID}`)
+            navigate(`/watch/${movieInfo.imdbID}`);
         }
-        
     }
 
     return (
