@@ -8,6 +8,7 @@
 *::after {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    
 }
 
 #root {
@@ -17,7 +18,7 @@
 html {
     width: 100%;
     scroll-behavior: smooth;
-    background-color: #0c111b;
+    background-color: #121926;
 }
 
 body {
@@ -43,7 +44,8 @@ body::-webkit-scrollbar {
     padding: 30px;
     justify-content: space-between;
     color: whitesmoke;
-    background-color: var(--CARD_GRADIENT);
+    // background-color: var(--CARD_GRADIENT);
+    background-color: #121926;
 }
 
 

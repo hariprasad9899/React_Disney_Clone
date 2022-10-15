@@ -4,18 +4,19 @@ $CARD_GRADIENT: #030b17;
 $LIGHT_GRAY_FONT: rgb(157, 156, 156);
 $SEACRCHBOX:rgba(245, 245, 245, 0.76);
 
-
 .topMenu {
     height: 70px;
     padding: 40px 40px 40px 40px;
     justify-content: space-between;
     color: whitesmoke;
-    background-color: $CARD_GRADIENT;
-    
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1010;
 }
 
 .topMenu, .options-section  {
-    @include flexCen()
+    @include flexCen();   
 }
 
 .options-section {

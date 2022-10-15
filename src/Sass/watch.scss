@@ -2,6 +2,7 @@
 
 .watchContent {
     height: 100vh;
+    margin-top: 100px;
 }
 
 .watchFlexCard {
@@ -11,8 +12,9 @@
     color: white;
     border-radius: 5px;
     position: relative;
-    border: 1px solid white;
-    background: linear-gradient(to right,transparent,#192133 150%);
+    // border: 1px solid white;
+    // background: linear-gradient(to right,transparent,#192133 150%);
+    background: linear-gradient(to right,transparent,#2b3755 150%);
 
     .watchFlexContent {
         padding: 5% 50% 5% 5%;

@@ -24,8 +24,9 @@ body {
     padding: 30px;
     justify-content: space-between;
     color: whitesmoke;
-    background-color: var(--CARD_GRADIENT);
+    /* background-color: var(--CARD_GRADIENT); */
     /* background-color: var(--BG_TWO); */
+    /* background-color: red; */
 }
 
 .topMenu, .options-section , .search-option {

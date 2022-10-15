@@ -146,7 +146,7 @@ export default function Menu() {
 
 
     return (
-        <div className="topMenu">
+        <div className="topMenu" >
 
             <div className="options-section" onMouseLeave={closePops}>
 
