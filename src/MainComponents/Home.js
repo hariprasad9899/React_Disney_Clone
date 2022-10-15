@@ -5,7 +5,6 @@ import Content from './Content/Content';
 export default function Home() {
     return(
         <>
-            {/* <Menu /> */}
             <Content />
         </>
     )

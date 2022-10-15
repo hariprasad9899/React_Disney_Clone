@@ -1,0 +1,20 @@
+.watchContent {
+    height: 100vh;
+}
+
+
+.watchFlexCard {
+    width: 95%;
+    margin: 0 auto;
+    height: 400px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    background: linear-gradient(red,yellow);
+    .watchFlexContent {
+        padding: 5% 40% 5% 5%;
+        .addPlot {
+            padding-right: 5%;
+        }
+    }    
+}

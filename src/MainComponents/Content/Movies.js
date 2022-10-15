@@ -22,8 +22,7 @@ export default function Movies({genre}) {
             let res = await fetch(`http://www.omdbapi.com/?t=${item}&apikey=f2a05d22`);
             let data = await res.json();
             // console.log(data)
-            setMovies(prevMovies => {
-                
+            setMovies(prevMovies => { 
                 return prevMovies.concat(data)
             })
             setLoadState(false)

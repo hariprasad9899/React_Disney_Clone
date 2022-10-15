@@ -20,7 +20,7 @@ export default function MovieCard({movieInfo}){
         backgroundImage: `url(${poster})`,  
     }
 
-    function trimMoviePlot(plotData){
+    const trimMoviePlot = (plotData) => {
         let moviePlotArr = plotData.split(' ').slice(0,10).join(' ');
         return moviePlotArr + '...';
     }
@@ -28,7 +28,7 @@ export default function MovieCard({movieInfo}){
     const [watchListState, setWatchListState] = useState(true);
     const [popupState, setPopupState] = useState(false);
 
-    function addToWatchList(e){
+    const addToWatchList = (e) => {
         setPopupState(true);
         setTimeout(() => {
             setPopupState(false)
@@ -37,7 +37,7 @@ export default function MovieCard({movieInfo}){
         e.stopPropagation();
     }
 
-    function removeFromWatchList(e){
+    const removeFromWatchList = (e) => {
         setPopupState(true);
         setTimeout(() => {
             setPopupState(false)
@@ -63,7 +63,7 @@ export default function MovieCard({movieInfo}){
                 <p className="moviePlot">{trimMoviePlot(movieInfo.Plot)}</p>
                 <div className="cardBtns playButton">
                     <FontAwesomeIcon icon={faPlay} />
-                    <p onClick={() => e.stopImmediatePropagation()} >WATCH MOVIE</p>
+                    <p>WATCH MOVIE</p>
                 </div>
                 
                 {
@@ -85,6 +85,7 @@ export default function MovieCard({movieInfo}){
                 
             </div>
             { popupState && <PopupPortal added = {watchListState} visibleState={watchListState} /> }
-        </div>   
+        </div> 
+
     )
 }

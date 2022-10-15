@@ -15,6 +15,8 @@ body {
 
 :root {
     --CARD_GRADIENT: #030b17;
+    --BG_TWO: #121926;
+
 }
 
 .topMenu {
@@ -23,6 +25,7 @@ body {
     justify-content: space-between;
     color: whitesmoke;
     background-color: var(--CARD_GRADIENT);
+    /* background-color: var(--BG_TWO); */
 }
 
 .topMenu, .options-section , .search-option {
