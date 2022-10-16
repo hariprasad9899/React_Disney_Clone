@@ -1,0 +1,129 @@
+@import './helper';
+
+.footerContent {
+    color: white;
+    padding: 15px;
+    padding-left: 20px;
+    @include flexFiller(row,center,center,8px);
+
+    .copyRightContent {
+        p {
+            font-size: 0.8rem;
+            color: rgb(229, 226, 226);
+            padding-right: 20%;
+            line-height: 1.8;
+            a {
+                color: dodgerblue;
+                font-weight: 500;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        nav {
+            @include flexFiller(row,center,flex-start,15px);
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: rgb(229, 226, 226);
+            a { 
+                text-decoration: none;
+                color: rgb(229, 226, 226);
+                &:hover {
+                    cursor: pointer;
+                    color: dodgerblue;
+                }
+            }
+        }
+    }
+
+    .connect {
+        width: 100%;
+        margin-top: -15px;
+        @include flexFiller(row,center,center,30px);
+        color: rgb(229, 226, 226);
+        font-size: 0.9rem;
+        font-weight: 500;
+        .social {
+
+            .socialIcons {
+                @include flexFiller(row,center,flex-start,10px);
+                flex-wrap: wrap;
+                a {
+                    width: 40px;
+                    height: 40px;
+                    text-decoration: none;
+                    color: whitesmoke;
+                    border-radius: 5px;
+                    background-color: rgb(17, 31, 51);
+                    @include flexFiller(row,center,center,0px);
+                    &:hover {
+                        background-color: dodgerblue;
+                        cursor: pointer;
+                    }
+                    .socFont {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .app {
+            .appIcons {
+                @include flexFiller(row,center,center,10px);
+                flex-wrap: wrap;
+                a {
+                    width: 140px;
+                    height: 40px;
+                    border-radius: 5px;
+                    background-color: rgb(17, 31, 51);
+                    background-image: url('../../public/imgs/googleBadge.svg');
+                    @include flexFiller(row,center,center,0px);
+                    // img {
+                    //     width: 90%;
+                    //     height: 90%;
+                    // }
+                }
+            }
+        }
+        
+        
+    }
+}
+
+@media screen and (max-width:800px) {
+
+    .footerContent {
+        @include flexFiller(column,center,center,10px);
+        .copyRightContent {
+            p {
+                padding-right: 0;
+            }
+            nav {
+                font-size: 0.7rem;
+            }
+        }
+        .connect {
+            @include flexFiller(row,center,flex-start,30px);
+        }
+    }
+    
+}
+
+@media screen and (max-width:600px) {
+    .footerContent {
+        .copyRightContent {
+            text-align: center;
+            nav {
+                font-size: 0.7rem;
+                @include flexFiller(row,center,center,15px);
+            }
+        }
+        .connect {
+            flex-wrap: wrap;
+            @include flexFiller(row,center,center,30px);
+            .app {
+                text-align: center;
+            }
+        }
+    }
+}

@@ -34,6 +34,7 @@ export default function WatchFlex({info}){
                 <div className="addPlot">
                     <p>{shortenPara(info.Plot)}</p>
                 </div>
+                
             </div>
 
             <WatchOptions />
