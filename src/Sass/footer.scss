@@ -75,18 +75,17 @@
                     width: 140px;
                     height: 40px;
                     border-radius: 5px;
-                    background-color: rgb(17, 31, 51);
-                    background-image: url('../../public/imgs/googleBadge.svg');
                     @include flexFiller(row,center,center,0px);
-                    // img {
-                    //     width: 90%;
-                    //     height: 90%;
-                    // }
+                    .gbStyle {
+                        fill: #2b3755;
+                        &:hover {
+                            fill: dodgerblue;
+                        }
+                    }
+                    
                 }
             }
         }
-        
-        
     }
 }
 

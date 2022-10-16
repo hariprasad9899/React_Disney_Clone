@@ -2,35 +2,11 @@ import React, { useEffect, useState } from "react";
 import '../../Sass/footer.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import GoogleBadge from "../SVGIcons/googleBadge";
 import Googlebadge from "../SVGIcons/googleBadge";
+import Applebadge from "../SVGIcons/AppleBadge";
 
 
 export default function Footer(){
-
-    const SOC = {
-        GOOGLE: 'google',
-        APPLE: 'apple',
-    }
-
-    const [hoverState,setHoverState] = useState({
-        google: false,
-        apple: false,
-    })
-
-    const mouseAction = (val) => {
-
-        setHoverState(prevState =>({
-            ...prevState,
-            [val]: !prevState[val]
-        }))
-
-    }
-
-
-    useEffect(() => {
-        console.log(hoverState);
-    },[hoverState])
 
     return (
 
@@ -71,10 +47,8 @@ export default function Footer(){
                 <div className="app">
                     <p>Disney+ Hotstar App</p>
                     <div className="appIcons">
-                        <a className="googlePlay" onMouseOver={() => mouseAction(SOC.GOOGLE)} onMouseOut = {() => mouseAction(SOC.GOOGLE)}>
-                           <Googlebadge  hoverState = {hoverState.google} />
-                        </a>
-                        <a className="appStore"></a>
+                        <a className="googlePlay"> <Googlebadge /> </a>
+                        <a className="appStore"> <Applebadge /> </a>
                     </div>
                 </div>
 
