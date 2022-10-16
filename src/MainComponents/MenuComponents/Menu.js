@@ -4,6 +4,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import GeneratorComponent from './GeneratorComponent';
 import Channel from '../MenuComponents/Channel';
 import '../../Sass/menu.scss';
+import Loginpop from "./Loginpop";
 
 
 export default function Menu() {
@@ -144,6 +145,10 @@ export default function Menu() {
         return window.removeEventListener('click', handleOutClick)
     }, [optionsState, burgerHoverState ])
 
+    // Login option 
+
+    const [loginPop, setLoginPop] = useState(true);
+
 
     return (
         <div className="topMenu" >
@@ -200,8 +205,11 @@ export default function Menu() {
 
                 {width > 760 && <button>SUBSCRIBE</button>}
 
-                <a className="login-btn">LOGIN</a>
+                <a className="login-btn" onClick={() => setLoginPop(true)}>LOGIN</a>
             </div>
+
+            {loginPop && <Loginpop  closePop = {() => setLoginPop(false)}/>}
+
         </div>
     )
 

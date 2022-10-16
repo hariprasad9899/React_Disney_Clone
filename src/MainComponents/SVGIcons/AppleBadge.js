@@ -11,12 +11,12 @@ export default function Applebadge(){
                 <path d="M134.032 35.268a3.83 3.83 0 0 1-3.834 3.83H4.729a3.835 3.835 0 0 1-3.839-3.83V4.725A3.84 3.84 0 0 1 4.729.89h125.468a3.834 3.834 0 0 1 3.834 3.835l.001 30.543z"/>
                 <path fill="#FFF" d="M30.128 19.784c-.029-3.223 2.639-4.791 2.761-4.864-1.511-2.203-3.853-2.504-4.676-2.528-1.967-.207-3.875 1.177-4.877 1.177-1.022 0-2.565-1.157-4.228-1.123-2.14.033-4.142 1.272-5.24 3.196-2.266 3.923-.576 9.688 1.595 12.859 1.086 1.554 2.355 3.287 4.016 3.226 1.625-.066 2.232-1.035 4.193-1.035 1.943 0 2.513 1.035 4.207.996 1.744-.027 2.842-1.56 3.89-3.127 1.255-1.779 1.759-3.533 1.779-3.623-.04-.014-3.386-1.292-3.42-5.154zM26.928 10.306c.874-1.093 1.472-2.58 1.306-4.089-1.265.056-2.847.875-3.758 1.944-.806.942-1.526 2.486-1.34 3.938 1.421.106 2.88-.717 3.792-1.793z"/>
                     <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="-23.235" y1="97.431" x2="-23.235" y2="61.386" gradientTransform="matrix(4.0022 0 0 4.0011 191.95 -349.736)">
-                        <stop offset="0" stop-color="transparent" stop-opacity=".1"/>
-                        <stop offset=".123" stop-color="transparent" stop-opacity=".151"/>
-                        <stop offset=".308" stop-color="transparent" stop-opacity=".227"/>
-                        <stop offset=".532" stop-color="transparent" stop-opacity=".318"/>
-                        <stop offset=".783" stop-color="transparent" stop-opacity=".421"/>
-                        <stop offset="1" stop-color="transparent" stop-opacity=".51"/>
+                        <stop offset="0" stopColor="transparent" stopOpacity=".1"/>
+                        <stop offset=".123" stopColor="transparent" stopOpacity=".151"/>
+                        <stop offset=".308" stopColor="transparent" stopOpacity=".227"/>
+                        <stop offset=".532" stopColor="transparent" stopOpacity=".318"/>
+                        <stop offset=".783" stopColor="transparent" stopOpacity=".421"/>
+                        <stop offset="1" stopColor="transparent" stopOpacity=".51"/>
                     </linearGradient>
 
                 <path fill="url(#a)" d="M130.198 0H62.993l26.323 39.989h40.882a4.733 4.733 0 0 0 4.729-4.724V4.726A4.734 4.734 0 0 0 130.198 0z"/>

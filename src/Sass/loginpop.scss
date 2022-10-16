@@ -1,0 +1,49 @@
+@import './helper';
+
+.loginPop {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 450px;
+    z-index: 2005;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #192133;
+
+    .btnSet {
+        @include flexFiller(row,center,space-between,0px);
+        p {
+            font-size: 2rem;
+            font-weight: lighter;
+            margin-top: -5px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+    }
+    .loginInfo {
+        padding: 5px 40px 5px 40px ;
+        @include flexFiller(column,center,center,20px);
+        h4 {
+            align-self: flex-start;
+            font-weight: 500;
+        }
+        .checkSocial {
+            width: 100%;
+            border: 1px solid #1f80e0;
+            border-radius: 5px;
+            color: #1f80e0;
+            font-weight: 500;
+            padding: 15px;
+            text-align: center;
+            background-color: rgba(31,127,224,0.1);
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
