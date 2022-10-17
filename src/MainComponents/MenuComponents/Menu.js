@@ -147,7 +147,7 @@ export default function Menu() {
 
     // Login option 
 
-    const [loginPop, setLoginPop] = useState(true);
+    const [loginPop, setLoginPop] = useState(false);
 
 
     return (
@@ -208,7 +208,7 @@ export default function Menu() {
                 <a className="login-btn" onClick={() => setLoginPop(true)}>LOGIN</a>
             </div>
 
-            {loginPop && <Loginpop  closePop = {() => setLoginPop(false)}/>}
+            {loginPop && <Loginpop  closePop = {() => setLoginPop(false)} />}
 
         </div>
     )

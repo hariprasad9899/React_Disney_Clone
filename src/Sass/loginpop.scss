@@ -1,5 +1,8 @@
 @import './helper';
 
+$DisneyBlue: #1f80e0;
+$DisneySmokeWhite: rgb(206, 205, 205);
+
 .loginPop {
     position: fixed;
     top: 50%;
@@ -19,9 +22,16 @@
             font-size: 2rem;
             font-weight: lighter;
             margin-top: -5px;
+            margin-right:10px;
             &:hover {
                 cursor: pointer;
             }
+        }
+        .backBtn {
+            font-size: 1.3rem;
+            margin-left: 40px;
+            color: $DisneyBlue;
+            font-weight: 600;
         }
 
     }
@@ -34,15 +44,86 @@
         }
         .checkSocial {
             width: 100%;
-            border: 1px solid #1f80e0;
+            border: 1px solid $DisneyBlue;
             border-radius: 5px;
-            color: #1f80e0;
+            color: $DisneyBlue;
             font-weight: 500;
             padding: 15px;
             text-align: center;
             background-color: rgba(31,127,224,0.1);
             &:hover {
                 cursor: pointer;
+            }
+        }
+
+        .inpGroup {
+            width: 100%;
+
+
+            .labelInp {
+                @include flexFiller(row,center,center,4px);
+                font-size: 0.9rem;
+                color: $DisneySmokeWhite;
+                border-bottom: 2px solid $DisneyBlue;
+
+
+                .phoneNumber {
+                    width: 100%;
+                    padding: 10px;
+                    border: none;
+                    outline: none;
+                    font-size: 1rem;
+                    background-color: transparent;
+                    font-family: 'Inter', sans-serif;
+                    color: $DisneySmokeWhite;
+                }
+
+                .sep {
+                    font-weight: lighter;
+                }
+    
+                .phoneNumber::placeholder {
+                    color: $DisneySmokeWhite;
+                    font-size: 1rem;
+                    font-weight: lighter;
+                    font-family: 'Inter', sans-serif;
+                }
+            }
+
+            .errorInfo {
+                color: rgb(255, 0, 0);
+                font-size: 0.8rem;
+                font-weight: lighter;
+                transition: 0.4s ease;
+                @include flexFiller(row,center,space-between,0px)
+            }
+           
+        }
+    }
+
+    .numInfo {
+        width: 100%;
+        .continue {
+            width: 100%;
+            padding: 15px;
+            background-color: $DisneyBlue;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            margin-top: -25px;
+            border-radius: 8px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .terms {
+            font-size: 0.7rem;
+            margin-top: 2px;
+            color: $DisneySmokeWhite;
+            a {
+                text-decoration: none;
+                color: $DisneyBlue;
+                font-weight: 500;
             }
         }
     }
