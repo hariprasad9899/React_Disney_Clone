@@ -59,7 +59,6 @@ $DisneySmokeWhite: rgb(206, 205, 205);
         .inpGroup {
             width: 100%;
 
-
             .labelInp {
                 @include flexFiller(row,center,center,4px);
                 font-size: 0.9rem;
@@ -117,7 +116,8 @@ $DisneySmokeWhite: rgb(206, 205, 205);
             }
         }
         .terms {
-            font-size: 0.7rem;
+            font-size: 0.69rem;
+            text-align: center;
             margin-top: 2px;
             color: $DisneySmokeWhite;
             a {
@@ -127,4 +127,12 @@ $DisneySmokeWhite: rgb(206, 205, 205);
             }
         }
     }
+
+    .emailInfo {
+        padding: 5px 40px 5px 40px ;
+        @include flexFiller(column,center,center,20px);
+    }
+
+
 }
+

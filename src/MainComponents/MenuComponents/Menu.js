@@ -4,7 +4,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import GeneratorComponent from './GeneratorComponent';
 import Channel from '../MenuComponents/Channel';
 import '../../Sass/menu.scss';
-import Loginpop from "./Loginpop";
+import Loginpop from "./Loginpop/Loginpop";
 
 
 export default function Menu() {
@@ -147,7 +147,7 @@ export default function Menu() {
 
     // Login option 
 
-    const [loginPop, setLoginPop] = useState(false);
+    const [loginPop, setLoginPop] = useState(true);
 
 
     return (
