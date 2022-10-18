@@ -147,7 +147,7 @@ export default function Menu() {
 
     // Login option 
 
-    const [loginPop, setLoginPop] = useState(true);
+    const [loginPop, setLoginPop] = useState(false);
 
 
     return (

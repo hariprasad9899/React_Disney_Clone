@@ -12,11 +12,13 @@ export default function Loginpop({closePop}){
 
     const initState = {
         haveBackBtn: false,
-        haveEmailState: true,
+        haveEmailState: false,
         phoneNumberInfo: true,
         phoneNumberInput: '',
         borderBottomFocus: false,
         errorAlert: false,
+        emailInput: '',
+        emailError: false,
     }
 
     const ACTIONS = {
@@ -24,13 +26,18 @@ export default function Loginpop({closePop}){
         CLOSE: 'CLOSE',
         BACK:'BACK',
         ERROR:'ERROR',
-        EMAIL: 'EMAIL'
+        EMAIL: 'EMAIL',
+        EMAILINP: 'EMAILINP',
+        EMAILERROR: 'EMAILERROR',
     }
+
+    
 
     useEffect(() => {
 
+        let timer;
         function errorAlert(){
-            setTimeout(() => {
+            timer = setTimeout(() => {
                 dispatch({type: 'ERROR'})
             }, 5000);
         }
@@ -38,7 +45,7 @@ export default function Loginpop({closePop}){
         errorAlert()
 
         return ()=> {
-            errorAlert;
+            clearTimeout(timer)
         }
         
     },[logState])
@@ -63,6 +70,12 @@ export default function Loginpop({closePop}){
 
             case ACTIONS.EMAIL:
                 return {...logState,haveEmailState:true, haveBackBtn:true}
+            
+            case ACTIONS.EMAILINP:
+                return {...logState, emailInput: action.payload.value, emailError: false}
+            
+            case ACTIONS.EMAILERROR:
+                return {...logState,emailError:true}
 
         }
 
@@ -77,7 +90,6 @@ export default function Loginpop({closePop}){
         displayStyle: {
             visibility: (logState.errorAlert) ? 'visible' : 'hidden'
         }
-
     }
 
     const BACKBTNSTYLE = {
@@ -98,7 +110,7 @@ export default function Loginpop({closePop}){
             { (!logState.haveEmailState)  ? 
                 <LoginInfo  logState = {logState} dispatch = {dispatch} ERRORSTYLE = {ERRORSTYLE} /> 
                 : 
-                <EmailInfo />
+                <EmailInfo emailInput = {logState.emailInput} dispatch = {dispatch} logState = {logState} />
             }
 
         </div>, 
