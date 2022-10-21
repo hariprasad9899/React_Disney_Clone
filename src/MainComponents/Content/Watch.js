@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom';
 import WatchFlex from "./WatchFlex";
+import Menu from "../MenuComponents/Menu";
 // tt4169250
 
 export default function Watch(){
@@ -20,8 +21,14 @@ export default function Watch(){
 
 
     return (    
-        <div className="watchContent">
-            <WatchFlex info={movieInfo}/>
-        </div>
+
+        <>
+             <Menu />
+             <div className="watchContent">
+                <WatchFlex info={movieInfo}/>
+            </div>
+
+        </>
+        
     )
 }

@@ -12,11 +12,12 @@ $FacebookBackground: #274e9c;
     transform: translate(-50%,-50%);
     width: 450px;
     height: 450px;
-    z-index: 2005;
+    z-index: 4005;
     color: white;
     border-radius: 5px;
     padding: 10px;
     background-color: #192133;
+
 
     .btnSet {
         @include flexFiller(row,center,space-between,0px);
@@ -112,6 +113,7 @@ $FacebookBackground: #274e9c;
             font-family: 'Inter', sans-serif;
             font-weight: 500;
             margin-top: -25px;
+            border: none;
             border-radius: 8px;
             &:hover {
                 cursor: pointer;
@@ -194,7 +196,21 @@ $FacebookBackground: #274e9c;
             }
         }
     }
-
-
 }
+
+.loginPop {
+    top: 55%;   
+}
+
+.popOpen {
+    top: 50%;
+    animation: myMove 0.4s 1; 
+    transition: 0.4s ease-in-out;
+}
+
+@keyframes myMove {
+    from {top: 55%}
+    to {top: 50%;}
+}
+
 

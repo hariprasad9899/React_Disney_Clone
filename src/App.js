@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import Home from './MainComponents/Home';
-import {Route, Routes} from 'react-router-dom';
-import Menu from './MainComponents/MenuComponents/Menu';
-import Watch from './MainComponents/Content/Watch';
-import Footer from './MainComponents/Content/Footer';
+import React, { createContext, useEffect, useState, useContext } from 'react';
+import { BlurContext } from './MainComponents/Context/BlurContext';
+import Main from "./Main";
 
 export default function App() {
-    return(
-        <>
-            <Menu />
-            <Routes>
-                <Route path='/' element = {<Home />}></Route>
-                <Route path='/watch' element = {<Watch />}>
-                    <Route path= ':imdbID' element = {<Watch />} />
-                </Route>
-            </Routes>
-            <Footer />
-        </>
+
+    const [blur,setBlur] = useState(false);
+
+    return (
+
+        <BlurContext.Provider value={{blur,setBlur}}>
+             <Main />
+        </BlurContext.Provider>
+       
     )
+
 }

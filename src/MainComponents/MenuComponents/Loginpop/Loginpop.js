@@ -8,7 +8,9 @@ import Inpgroup from "./Inpgroup";
 import LoginInfo from "./LoginInfo";
 import EmailInfo from "./EmailInfo";
 
-export default function Loginpop({closePop}){
+export default function Loginpop({closePop, loginPop}){
+
+
 
     const initState = {
         haveBackBtn: false,
@@ -30,8 +32,6 @@ export default function Loginpop({closePop}){
         EMAILINP: 'EMAILINP',
         EMAILERROR: 'EMAILERROR',
     }
-
-    
 
     useEffect(() => {
 
@@ -98,7 +98,7 @@ export default function Loginpop({closePop}){
 
     return PortalReactDom.createPortal(
 
-        <div className="loginPop">
+        <div className ={`loginPop  ${(loginPop) ? 'popOpen' : ''} `}>
 
             <div className="btnSet">
 

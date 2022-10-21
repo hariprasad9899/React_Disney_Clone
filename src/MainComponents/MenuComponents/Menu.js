@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import GeneratorComponent from './GeneratorComponent';
 import Channel from '../MenuComponents/Channel';
 import '../../Sass/menu.scss';
 import Loginpop from "./Loginpop/Loginpop";
+import { BlurContext } from "../Context/BlurContext";
+import {useNavigate} from 'react-router-dom';
 
 
 export default function Menu() {
@@ -149,7 +151,19 @@ export default function Menu() {
 
     const [loginPop, setLoginPop] = useState(false);
 
+    const {blur,setBlur} = useContext(BlurContext);
 
+    const openLoginPop = ()=> {
+        setLoginPop(true);
+        setBlur(true);
+    }
+
+    const closeLoginPop = () => {
+        setLoginPop(false);
+        setBlur(false);
+    }
+
+    const navigate = useNavigate()
     return (
         <div className="topMenu" >
 
@@ -191,7 +205,7 @@ export default function Menu() {
 
             <div className="search-section">
                 
-                {width < 760 && <button className="minBtn">SUBSCRIBE</button>}
+                {width < 760 && <button className="minBtn" onClick={() => navigate(`/subscribe`)}>SUBSCRIBE</button>}
 
                 <input type="text" 
                     placeholder="Search"
@@ -205,10 +219,10 @@ export default function Menu() {
 
                 {width > 760 && <button>SUBSCRIBE</button>}
 
-                <a className="login-btn" onClick={() => setLoginPop(true)}>LOGIN</a>
+                <a className="login-btn" onClick={openLoginPop}>LOGIN</a>
             </div>
 
-            {loginPop && <Loginpop  closePop = {() => setLoginPop(false)} />}
+            {loginPop && blur && <Loginpop  closePop = {closeLoginPop} loginPop = {loginPop} />}
 
         </div>
     )

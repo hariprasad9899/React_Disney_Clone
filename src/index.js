@@ -11,14 +11,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // https://developers.themoviedb.org/3/reviews/get-review-details
 
 // f2a05d22
+
 root.render(
-    <>  
-        <React.StrictMode>
+
+    <React.StrictMode>
             <BrowserRouter>
                 <App />
             </BrowserRouter>
-        </React.StrictMode>
-        
-        
-    </>
+    </React.StrictMode>
+    
 )
