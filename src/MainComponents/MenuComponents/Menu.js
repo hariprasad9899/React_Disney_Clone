@@ -176,7 +176,7 @@ export default function Menu() {
                     <Channel  hoverState = {burgerHoverState}/>
                 </div>
 
-                <img src= './imgs/disneyLogo.svg'></img>
+                <img src= '../imgs/disneyLogo.svg'></img>
 
                 <nav className="nav-options">
 
@@ -217,7 +217,7 @@ export default function Menu() {
                     style = {INPUT_STYLE}
                 ></input>
 
-                {width > 760 && <button>SUBSCRIBE</button>}
+                {width > 760 && <button onClick={() => navigate('/subscribe')}>SUBSCRIBE</button>}
 
                 <a className="login-btn" onClick={openLoginPop}>LOGIN</a>
             </div>
