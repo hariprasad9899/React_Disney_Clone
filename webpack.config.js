@@ -15,9 +15,10 @@ module.exports = {
 
     devServer: {
         port: 3000,
-        historyApiFallback: true
+        historyApiFallback: true,
     },
 
+    cache: false,
 
     plugins: [
         new HTMLWebpackPlugin( {
@@ -25,6 +26,7 @@ module.exports = {
         }),
         new CSSWebpackPlugin(),
     ],
+
 
     module: {
         rules: [
