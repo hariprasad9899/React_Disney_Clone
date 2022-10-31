@@ -47,7 +47,6 @@ export default function SubscribeMenu(){
     }
 
     return (
-        <div className="subscribeComponent">
             
             <div className="topMenu">
 
@@ -81,11 +80,9 @@ export default function SubscribeMenu(){
 
                 <button className="logBtn" onClick={openLoginPop}>Log in</button>
 
+                {loginPop && blur && <Loginpop  closePop = {closeLoginPop} loginPop = {loginPop} />}
+
             </div>
-
-            {loginPop && blur && <Loginpop  closePop = {closeLoginPop} loginPop = {loginPop} />}
-
-        </div>
     )
 
 }

@@ -3,86 +3,84 @@ $DisneyBlue: #1f80e0;
 $DisneySmokeWhite: rgb(206, 205, 205);
 $DisneyLightSmokeWhite: rgb(241, 238, 238);
 
+.topMenu {
+    position: relative;
+    padding: 25px 50px 0px 50px;
+    @include flexFiller(row,center,flex-start,0px);
 
-.subscribeComponent {
-
-    .topMenu {
-        padding: 25px 50px 0px 50px;
-        @include flexFiller(row,center,flex-start,0px);
-
-        .plan-state {
-            margin-right: auto;
-            @include flexFiller(column,flex-start,flex-start,10px);
-            font-size: 0.6rem;
-            color: $DisneySmokeWhite;
-            .select-plan {
-                margin-left: 5px;
-                @include flexFiller(row,flex-start,flex-start,3px);
-                .active-sel {
-                    color: white;
-                    @include font-size-weight(0.65rem,500)
-                }
-            }
-        }
-
-        .lang-opt {
-            
-            position: relative;
-            height: 30px;
-            min-width: 125px;
-            padding: 1px;
-            border: 1px solid white;
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-            @include flexFiller(row,center,center,0px);
-            font-size: 0.7rem;
-            color: $DisneySmokeWhite;
-            font-weight: 500;
-            .view {
-                @include flexFiller(row,center,center,5px);
-                p {
-                   .eng {
-                    color: white;
-                   }
-                }
-            }
-
-            &:hover {
-                cursor: pointer;
-            }
-
-            .inner-lang-opt {
-                position: absolute;
-                min-width: 125px;
-                border: 1px solid white;
-                background-color: #192135;
-                top: 29px;
-                @include flexFiller(column,center,center,0px);
-                .lang-names {
-                    width: 100%;
-                    @include flexFiller(row,center,flex-start,0px);
-                    border-bottom: 1.5px solid $DisneySmokeWhite;
-                    p {
-                        margin-left: 15px;
-                        
-                    }
-                }
-                .lang-names:last-child {
-                    border-bottom: none;
-                }
-            }
-        }
-
-        .logBtn {
-            background-color: $DisneyBlue;
-            color: white;
-            padding: 7px 15px 7px 15px;
-            border-radius: 5px;
-            margin-left: 10px;
-            &:hover {
-                cursor: pointer;
+    .plan-state {
+        margin-right: auto;
+        @include flexFiller(column,flex-start,flex-start,10px);
+        font-size: 0.6rem;
+        color: $DisneySmokeWhite;
+        .select-plan {
+            margin-left: 5px;
+            @include flexFiller(row,flex-start,flex-start,3px);
+            .active-sel {
+                color: white;
+                @include font-size-weight(0.65rem,500)
             }
         }
     }
-}   
+
+    .lang-opt {
+        
+        position: relative;
+        height: 30px;
+        min-width: 125px;
+        padding: 1px;
+        border: 1px solid white;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        @include flexFiller(row,center,center,0px);
+        font-size: 0.7rem;
+        color: $DisneySmokeWhite;
+        font-weight: 500;
+        .view {
+            @include flexFiller(row,center,center,5px);
+            p {
+                .eng {
+                color: white;
+                }
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .inner-lang-opt {
+            position: absolute;
+            min-width: 125px;
+            border: 1px solid white;
+            background-color: #192135;
+            top: 29px;
+            @include flexFiller(column,center,center,0px);
+            .lang-names {
+                width: 100%;
+                @include flexFiller(row,center,flex-start,0px);
+                border-bottom: 1.5px solid $DisneySmokeWhite;
+                p {
+                    margin-left: 15px;
+                    
+                }
+            }
+            .lang-names:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .logBtn {
+        background-color: $DisneyBlue;
+        color: white;
+        padding: 7px 15px 7px 15px;
+        border-radius: 5px;
+        margin-left: 10px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
 

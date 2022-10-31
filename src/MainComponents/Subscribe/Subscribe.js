@@ -6,6 +6,7 @@ import {useNavigate} from 'react-router-dom';
 import '../../Sass/subscribe.scss';
 import { BlurContext } from "../Context/BlurContext";
 import SubscribeMenu from "./SubscribeMenu";
+import Plan from "./Plan";
 
 export default function Subscribe(){
     
@@ -13,7 +14,9 @@ export default function Subscribe(){
         <div className="subscribeComponent">
             
             <SubscribeMenu />
-            
+                
+            <Plan />
+
             
         </div>
     )

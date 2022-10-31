@@ -1,0 +1,78 @@
+@import './helper';
+$DisneyBlue: #1f80e0;
+$DisneySmokeWhite: rgb(206, 205, 205);
+$DisneyLightSmokeWhite: rgb(241, 238, 238);
+$LightGrey: rgba(255, 255, 255, 0.113);
+
+.plan-section {
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    .head-sec {
+        font-size: light;
+        color:white;
+        font-size: 1.35rem;
+    }
+
+    .plan-div {
+        width: 80%;
+        height: 400px;
+        @include width-height(80%,400px);
+        margin: auto;
+        background-color: #1a2238;
+
+        .inner-plan-div {
+            width: 90%;
+            @include width-height(90%,50%);
+            @include flexFiller(column,center,center,0px);
+            margin: auto;
+
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 3px;
+                position: absolute;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: transparent;
+                border-radius: 20px;
+            }
+
+            &::-webkit-scrollbar-button {
+                height: 15px;
+            }
+
+            .content-row {
+                width: 100%;
+                height: 100px;
+                border-bottom: 0.4px solid $LightGrey;
+                @include flexFiller(row,flex-start,flex-start,0px);
+
+                .plan-info {
+                    flex-grow: 6;
+                    @include flexFiller(row,center,flex-start,0px);
+                }
+
+                .plan-super {
+                    flex-grow: 2;
+                }
+
+                .plan-premium {
+                    flex-grow: 2;
+                }
+            }
+        }
+
+        .inner-plan-div:hover {
+            &::-webkit-scrollbar-thumb {
+                background-color: rgb(133, 130, 130);
+            }
+        }
+    }
+}
