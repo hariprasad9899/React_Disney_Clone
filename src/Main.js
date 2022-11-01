@@ -22,7 +22,6 @@ export default function Main() {
 
             <div className='container'>
 
-                    
                     <Routes>
                         <Route path='/' element = {<Subscribe />}></Route>
                         <Route path='/watch' element = {<Watch />}>
@@ -30,6 +29,7 @@ export default function Main() {
                         </Route>
                         <Route path='/subscribe' element = {<Subscribe />}></Route>
                     </Routes>
+                    
                 <Footer />
 
                 <div style={overlayStyle}  onClick = {() => setBlur(false)}  className='overLay'></div>

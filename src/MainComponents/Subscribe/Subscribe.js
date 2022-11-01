@@ -7,6 +7,7 @@ import '../../Sass/subscribe.scss';
 import { BlurContext } from "../Context/BlurContext";
 import SubscribeMenu from "./SubscribeMenu";
 import Plan from "./Plan";
+import AutoSlide from "./AutoSlide";
 
 export default function Subscribe(){
     
@@ -17,6 +18,7 @@ export default function Subscribe(){
                 
             <Plan />
 
+            <AutoSlide />
             
         </div>
     )
