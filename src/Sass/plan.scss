@@ -3,9 +3,45 @@ $DisneyBlue: #1f80e0;
 $DisneySmokeWhite: rgb(206, 205, 205);
 $DisneyLightSmokeWhite: rgb(241, 238, 238);
 $LightGrey: rgba(255, 255, 255, 0.113);
+$DisneyGold:  rgb(176, 140, 47);
+
+@mixin  rowStyle {
+    
+    width: 100%;
+    padding: 10px 45px 10px 45px;
+    @include flexFiller(row, center,flex-start,0px);
+    flex-shrink: 0;
+
+    p {
+        font-weight: 500;
+    }
+
+    .plan-info {
+        width: 60%;
+        @include flexFiller(column,flex-start,center,0px);
+
+        .spl-line {
+            margin-top: -5px;
+            font-size: 0.8rem;
+            color: $DisneyBlue;
+        }
+    }
+
+    .plan-super {
+        width: 20%;
+        flex-grow: 2;
+    }
+
+    .plan-premium {
+        width: 20%;
+        flex-grow: 2;
+    }
+
+}
 
 .plan-section {
-    width: 80%;
+    
+    width: 85%;
     margin: 0 auto;
     color: white;
     text-align: center;
@@ -16,19 +52,51 @@ $LightGrey: rgba(255, 255, 255, 0.113);
     }
 
     .plan-div {
-        width: 80%;
-        height: 400px;
-        @include width-height(80%,400px);
+
+        @include width-height(80%,auto);
         margin: auto;
+        color: $DisneySmokeWhite;
+        position: relative;
         background-color: #1a2238;
+        padding-bottom: 40px;
+
+        .header-row {
+            @include rowStyle();
+            p {
+                font-weight: 600;
+            }
+            .active {
+                color: $DisneyGold;
+            }
+        }
 
         .inner-plan-div {
-            width: 90%;
-            @include width-height(90%,50%);
-            @include flexFiller(column,center,center,0px);
-            margin: auto;
-
+            width: 100%;
+            height: 200px;
             overflow-y: scroll;
+            @include flexFiller(column, center,flex-start,5px);
+            
+            .content-row {
+                @include rowStyle();
+                padding: 5px 45px 5px 45px;
+                height: 50px;
+                border-bottom: 1px solid #2e3333;
+
+                .plan-info {
+                    font-size: 0.9rem;
+                }
+
+                .plan-super, .plan-premium  {
+                    .fa-Font {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+            .first-row {
+                height: auto;
+                padding: 10px 45px 2px 45px;
+            }
 
             &::-webkit-scrollbar {
                 width: 3px;
@@ -48,30 +116,99 @@ $LightGrey: rgba(255, 255, 255, 0.113);
                 height: 15px;
             }
 
-            .content-row {
-                width: 100%;
-                height: 100px;
-                border-bottom: 0.4px solid $LightGrey;
-                @include flexFiller(row,flex-start,flex-start,0px);
+            &:hover {
 
-                .plan-info {
-                    flex-grow: 6;
-                    @include flexFiller(row,center,flex-start,0px);
+                &::-webkit-scrollbar-thumb {
+                    background-color: rgb(133, 130, 130);
                 }
-
-                .plan-super {
-                    flex-grow: 2;
-                }
-
-                .plan-premium {
-                    flex-grow: 2;
-                }
+    
             }
         }
 
-        .inner-plan-div:hover {
-            &::-webkit-scrollbar-thumb {
-                background-color: rgb(133, 130, 130);
+        .choose-plan {
+
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px 45px 0px 45px;
+            @include  flexFiller(row,center,space-between,0px);
+            
+            .plan-btn {
+                width: 32.5%;
+                height: 80px;
+                font-weight: 600;
+                padding: 13px 10px 13px 10px;
+                border-radius: 5px;
+                border: 1px solid #334366;
+                position: relative;
+                @include flexFiller(column, flex-start, center,0px);
+
+                
+                .plan-pay {
+                    
+                    margin-top: -10px;
+                    .ruppee {
+                        font-size: 0.9rem;
+                        margin-right: 2px;
+                    }
+
+                    .amount {
+                        font-weight: 600;
+                        font-size: 1.3rem;
+                    }
+
+                    .duration {
+                        font-weight: 400;
+                    }
+
+                }
+
+                .tickMark {
+                    top: -10px;
+                    right: -5px;
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    background-color: whitesmoke;
+                    border-radius: 50%;
+                    @include flexFiller(row,center,center,0px);
+                    display: none;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .active {
+
+                background-color: rgba(63, 136, 209, 0.432);
+                border: 1px solid #1f80e0;
+                .tickMark {
+                    display: flex;
+                }
+
+                .selctedPlan {
+                    color:$DisneyGold;
+                }
+
+
+            }
+
+        }
+
+        .plan-cont {
+            width: 90%;
+            margin: auto;
+            border-radius: 3px;
+            background-color: $DisneyBlue;
+            color: white;
+            font-weight: 600;
+            padding: 5px;
+            margin-top: 10px;
+            @include flexFiller(row,center,center,10px);
+
+            &:hover {
+                cursor: pointer;
             }
         }
     }
