@@ -37,9 +37,14 @@ export default function Plan(){
     }
 
 
-    let c1 = (plan.super) ? 'plan-btn active' : 'plan-btn'
-    let c2 = (plan.premium1) ? 'plan-btn active': 'plan-btn'
-    let c3 = (plan.premium2) ? 'plan-btn active': 'plan-btn'
+    let c1 = (plan.super) ? 'plan-btn active' : 'plan-btn';
+    let c2 = (plan.premium1) ? 'plan-btn active': 'plan-btn';
+    let c3 = (plan.premium2) ? 'plan-btn active': 'plan-btn';
+
+
+    let p1 = (plan.super) ? 'plan-super active': 'plan-super';
+    let p2 = (!plan.super) ? 'plan-premium active' : 'plan-premium';
+
 
     return (
         <div className="plan-section">
@@ -73,11 +78,11 @@ export default function Plan(){
                             <p className="spl-line">Movies, live sports, TV, Specials</p>
                         </div>
 
-                        <div className="plan-super">
+                        <div className={p1}>
                             <FontAwesomeIcon icon={faCheck} className = "fa-Font" />
                         </div>
 
-                        <div className="plan-premium">
+                        <div className={p2}>
                             <FontAwesomeIcon icon={faCheck} className = "fa-Font" />
                         </div>
 
@@ -89,11 +94,11 @@ export default function Plan(){
                             <p>Watch on TV or Laptop</p>
                         </div>
 
-                        <div className="plan-super">
+                        <div className={p1}>
                             <FontAwesomeIcon icon={faCheck} className = "fa-Font" />
                         </div>
 
-                        <div className="plan-premium">
+                        <div className={p2}>
                             <FontAwesomeIcon icon={faCheck} className = "fa-Font" />
                         </div>
                         
@@ -105,11 +110,11 @@ export default function Plan(){
                             <p>Add free movies and shows (except sports)</p>
                         </div>
 
-                        <div className="plan-super">
+                        <div className={p1}>
                             <FontAwesomeIcon icon={faTimes} className = "fa-Font" />
                         </div>
 
-                        <div className="plan-premium">
+                        <div className={p2}>
                             <FontAwesomeIcon icon={faCheck} className = "fa-Font" />
                         </div>
                         
@@ -121,11 +126,11 @@ export default function Plan(){
                             <p>Number of devices that can be logged in</p>
                         </div>
 
-                        <div className="plan-super">
+                        <div className={p1}>
                             <p>2</p>
                         </div>
 
-                        <div className="plan-premium">
+                        <div className={p2}>
                             <p>4</p>
                         </div>
                         
@@ -137,11 +142,11 @@ export default function Plan(){
                             <p>Max video quality</p>
                         </div>
 
-                        <div className="plan-super">
+                        <div className={p1}>
                             <p>Full HD (1080p)</p>
                         </div>
 
-                        <div className="plan-premium">
+                        <div className={p2}>
                             <p>4k (2160px)</p>
                         </div>
                         
@@ -153,11 +158,11 @@ export default function Plan(){
                             <p>Max audio quality</p>
                         </div>
 
-                        <div className="plan-super">
+                        <div className={p1}>
                             <p>Dolby 5.1</p>
                         </div>
 
-                        <div className="plan-premium">
+                        <div className={p2}>
                             <p>Dolby 5.1</p>
                         </div>
                         

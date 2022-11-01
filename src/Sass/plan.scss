@@ -3,7 +3,8 @@ $DisneyBlue: #1f80e0;
 $DisneySmokeWhite: rgb(206, 205, 205);
 $DisneyLightSmokeWhite: rgb(241, 238, 238);
 $LightGrey: rgba(255, 255, 255, 0.113);
-$DisneyGold:  rgb(176, 140, 47);
+$DisneyGold:  rgb(255, 183, 0);
+$ActiveBackground: #223462;
 
 @mixin  rowStyle {
     
@@ -43,12 +44,14 @@ $DisneyGold:  rgb(176, 140, 47);
     
     width: 85%;
     margin: 0 auto;
+    margin-top: 70px;
     color: white;
     text-align: center;
     .head-sec {
         font-size: light;
         color:white;
-        font-size: 1.35rem;
+        font-size: 1.30rem;
+        font-weight: 500;
     }
 
     .plan-div {
@@ -62,23 +65,29 @@ $DisneyGold:  rgb(176, 140, 47);
 
         .header-row {
             @include rowStyle();
+
+            padding: 25px 45px 0px 45px;
             p {
                 font-weight: 600;
             }
             .active {
                 color: $DisneyGold;
+                background-color: $ActiveBackground;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
             }
+            
         }
 
         .inner-plan-div {
             width: 100%;
             height: 200px;
             overflow-y: scroll;
-            @include flexFiller(column, center,flex-start,5px);
+            @include flexFiller(column, center,flex-start,0px);
             
             .content-row {
                 @include rowStyle();
-                padding: 5px 45px 5px 45px;
+                padding: 0px 45px 0px 45px;
                 height: 50px;
                 border-bottom: 1px solid #2e3333;
 
@@ -90,12 +99,31 @@ $DisneyGold:  rgb(176, 140, 47);
                     .fa-Font {
                         font-size: 1.5rem;
                     }
+                    height: 100%;
+                    @include flexFiller(row,center,center,0px);
+                    margin-right: -1.9px;
+                    margin-left: 2px;
+                }
+
+                .active {
+                    background-color: $ActiveBackground;
+                    border-bottom: 1px solid $ActiveBackground;
+                    position: relative;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 10px;
+                        bottom: -5px;
+                        background-color:$ActiveBackground;
+                        border-radius: 5px;
+                    }
                 }
             }
 
             .first-row {
                 height: auto;
-                padding: 10px 45px 2px 45px;
+                padding: 0px 45px 0px 45px;
             }
 
             &::-webkit-scrollbar {
@@ -211,5 +239,7 @@ $DisneyGold:  rgb(176, 140, 47);
                 cursor: pointer;
             }
         }
+
+
     }
 }
