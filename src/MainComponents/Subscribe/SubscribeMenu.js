@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faAngleRight, faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import Loginpop from "../MenuComponents/Loginpop/Loginpop";
@@ -6,12 +6,13 @@ import {useNavigate} from 'react-router-dom';
 import '../../Sass/subscribe.scss';
 import { BlurContext } from "../Context/BlurContext";
 
-export default function SubscribeMenu(){
+export default function SubscribeMenu({scrollState}){
     
     const navigate = useNavigate();
 
     const [langState, setLangState ] = useState(false);
     const [choosenVal, setChoosenVal] = useState('English');
+
 
     const LANG_STYLE = {
 
@@ -24,6 +25,10 @@ export default function SubscribeMenu(){
         }
         
     } 
+
+    const MENUBG = {
+        backgroundColor: (scrollState) ? '#141b29' : 'transparent',
+    }
 
 
     const changeVal = (val) => {
@@ -46,9 +51,10 @@ export default function SubscribeMenu(){
         setBlur(false);
     }
 
+
     return (
             
-            <div className="topMenu">
+            <div className="topMenu" style={MENUBG}>
 
                 <div className="plan-state">
                     <img src= '../imgs/disneyLogo.svg'></img>

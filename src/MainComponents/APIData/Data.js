@@ -16,8 +16,14 @@ const movieDb = {
         names: ['The Thief','Prey','Cousins','Bhaskar Bechain','Rocky','The Last Letter','On Duty','Roar','Predator',
                 'Batman','Superman','Man of Steel'],
         'title': 'New on Disney+Hotstar'
-    }
+    },
 
+    'all': {
+        names: [ 'A Thursday','Sita Ramam','Top Gun: Maverick','Vikram','Vikrant Rona',
+        'RRR','Liger','Shawshank Redemption','Triangle', 'Dunkirk','Blonde', 'The Warrior',' Lion King','Avatar','Inception','Chhichhore','Housefull','MS Dhoni','Super 30','Bigil','Enthiran','Thiruchitrambalam','Beast',
+        'Pushpa the rise','Thank God', 'The Thief','Prey','Cousins','Bhaskar Bechain','Rocky','The Last Letter','On Duty','Roar','Predator',
+        'Batman','Superman','Man of Steel']
+    }
 }
 
 export default movieDb;
