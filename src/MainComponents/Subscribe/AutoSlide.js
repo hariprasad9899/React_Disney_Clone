@@ -59,6 +59,7 @@ export default function AutoSlide(){
                 <div className="poster-box"></div>
                 <div className="poster-box"></div>
 
+                
 
             </div>
 

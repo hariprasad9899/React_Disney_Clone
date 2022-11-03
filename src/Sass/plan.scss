@@ -40,206 +40,211 @@ $ActiveBackground: #223462;
 
 }
 
-.plan-section {
-    
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 70px;
-    color: white;
-    text-align: center;
-    .head-sec {
-        font-size: light;
-        color:white;
-        font-size: 1.30rem;
-        font-weight: 500;
-    }
 
-    .plan-div {
+.subscribeComponent {
 
-        @include width-height(80%,auto);
-        margin: auto;
-        color: $DisneySmokeWhite;
+    .plan-section {
         position: relative;
-        background-color: #1a2238;
-        padding-bottom: 40px;
-
-        .header-row {
-            @include rowStyle();
-
-            padding: 25px 45px 0px 45px;
-            p {
-                font-weight: 600;
-            }
-            .active {
-                color: $DisneyGold;
-                background-color: $ActiveBackground;
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-            }
-            
+        z-index: 5000;
+        width: 85%;
+        margin: 0 auto;
+        padding-top: 5%;
+        color: white;
+        text-align: center;
+        .head-sec {
+            font-size: light;
+            color:white;
+            font-size: 1.30rem;
+            font-weight: 500;
         }
 
-        .inner-plan-div {
-            width: 100%;
-            height: 200px;
-            overflow-y: scroll;
-            @include flexFiller(column, center,flex-start,0px);
-            
-            .content-row {
-                @include rowStyle();
-                padding: 0px 45px 0px 45px;
-                height: 50px;
-                border-bottom: 1px solid #2e3333;
+        .plan-div {
 
-                .plan-info {
-                    font-size: 0.9rem;
+            @include width-height(80%,auto);
+            margin: auto;
+            color: $DisneySmokeWhite;
+            position: relative;
+            background-color: #1a2238;
+            padding-bottom: 40px;
+
+            .header-row {
+                @include rowStyle();
+
+                padding: 25px 45px 0px 45px;
+                p {
+                    font-weight: 600;
+                }
+                .active {
+                    color: $DisneyGold;
+                    background-color: $ActiveBackground;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                }
+                
+            }
+
+            .inner-plan-div {
+                width: 100%;
+                height: 200px;
+                overflow-y: scroll;
+                @include flexFiller(column, center,flex-start,0px);
+                
+                .content-row {
+                    @include rowStyle();
+                    padding: 0px 45px 0px 45px;
+                    height: 50px;
+                    border-bottom: 1px solid #2e3333;
+
+                    .plan-info {
+                        font-size: 0.9rem;
+                    }
+
+                    .plan-super, .plan-premium  {
+                        .fa-Font {
+                            font-size: 1.5rem;
+                        }
+                        height: 100%;
+                        @include flexFiller(row,center,center,0px);
+                        margin-right: -1.9px;
+                        margin-left: 2px;
+                    }
+
+                    .active {
+                        background-color: $ActiveBackground;
+                        border-bottom: 1px solid $ActiveBackground;
+                        position: relative;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 10px;
+                            bottom: -5px;
+                            background-color:$ActiveBackground;
+                            border-radius: 5px;
+                        }
+                    }
                 }
 
-                .plan-super, .plan-premium  {
-                    .fa-Font {
-                        font-size: 1.5rem;
+                .first-row {
+                    height: auto;
+                    padding: 0px 45px 0px 45px;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 3px;
+                    position: absolute;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background-color: transparent;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: transparent;
+                    border-radius: 20px;
+                }
+
+                &::-webkit-scrollbar-button {
+                    height: 15px;
+                }
+
+                &:hover {
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: rgb(133, 130, 130);
                     }
-                    height: 100%;
-                    @include flexFiller(row,center,center,0px);
-                    margin-right: -1.9px;
-                    margin-left: 2px;
+        
+                }
+            }
+
+            .choose-plan {
+
+                width: 100%;
+                margin-top: 20px;
+                padding: 10px 45px 0px 45px;
+                @include  flexFiller(row,center,space-between,0px);
+                
+                .plan-btn {
+                    width: 32.5%;
+                    height: 80px;
+                    font-weight: 600;
+                    padding: 13px 10px 13px 10px;
+                    border-radius: 5px;
+                    border: 1px solid #334366;
+                    position: relative;
+                    @include flexFiller(column, flex-start, center,0px);
+
+                    
+                    .plan-pay {
+                        
+                        margin-top: -10px;
+                        .ruppee {
+                            font-size: 0.9rem;
+                            margin-right: 2px;
+                        }
+
+                        .amount {
+                            font-weight: 600;
+                            font-size: 1.3rem;
+                        }
+
+                        .duration {
+                            font-weight: 400;
+                        }
+
+                    }
+
+                    .tickMark {
+                        top: -10px;
+                        right: -5px;
+                        position: absolute;
+                        width: 25px;
+                        height: 25px;
+                        background-color: whitesmoke;
+                        border-radius: 50%;
+                        @include flexFiller(row,center,center,0px);
+                        display: none;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
 
                 .active {
-                    background-color: $ActiveBackground;
-                    border-bottom: 1px solid $ActiveBackground;
-                    position: relative;
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        width: 100%;
-                        height: 10px;
-                        bottom: -5px;
-                        background-color:$ActiveBackground;
-                        border-radius: 5px;
+
+                    background-color: rgba(63, 136, 209, 0.432);
+                    border: 1px solid #1f80e0;
+                    .tickMark {
+                        display: flex;
                     }
+
+                    .selctedPlan {
+                        color:$DisneyGold;
+                    }
+
+
                 }
+
             }
 
-            .first-row {
-                height: auto;
-                padding: 0px 45px 0px 45px;
-            }
-
-            &::-webkit-scrollbar {
-                width: 3px;
-                position: absolute;
-            }
-
-            &::-webkit-scrollbar-track {
-                background-color: transparent;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: transparent;
-                border-radius: 20px;
-            }
-
-            &::-webkit-scrollbar-button {
-                height: 15px;
-            }
-
-            &:hover {
-
-                &::-webkit-scrollbar-thumb {
-                    background-color: rgb(133, 130, 130);
-                }
-    
-            }
-        }
-
-        .choose-plan {
-
-            width: 100%;
-            margin-top: 20px;
-            padding: 10px 45px 0px 45px;
-            @include  flexFiller(row,center,space-between,0px);
-            
-            .plan-btn {
-                width: 32.5%;
-                height: 80px;
+            .plan-cont {
+                width: 90%;
+                margin: auto;
+                border-radius: 3px;
+                background-color: $DisneyBlue;
+                color: white;
                 font-weight: 600;
-                padding: 13px 10px 13px 10px;
-                border-radius: 5px;
-                border: 1px solid #334366;
-                position: relative;
-                @include flexFiller(column, flex-start, center,0px);
-
-                
-                .plan-pay {
-                    
-                    margin-top: -10px;
-                    .ruppee {
-                        font-size: 0.9rem;
-                        margin-right: 2px;
-                    }
-
-                    .amount {
-                        font-weight: 600;
-                        font-size: 1.3rem;
-                    }
-
-                    .duration {
-                        font-weight: 400;
-                    }
-
-                }
-
-                .tickMark {
-                    top: -10px;
-                    right: -5px;
-                    position: absolute;
-                    width: 25px;
-                    height: 25px;
-                    background-color: whitesmoke;
-                    border-radius: 50%;
-                    @include flexFiller(row,center,center,0px);
-                    display: none;
-                }
+                padding: 5px;
+                margin-top: 10px;
+                @include flexFiller(row,center,center,10px);
 
                 &:hover {
                     cursor: pointer;
                 }
             }
 
-            .active {
-
-                background-color: rgba(63, 136, 209, 0.432);
-                border: 1px solid #1f80e0;
-                .tickMark {
-                    display: flex;
-                }
-
-                .selctedPlan {
-                    color:$DisneyGold;
-                }
-
-
-            }
 
         }
-
-        .plan-cont {
-            width: 90%;
-            margin: auto;
-            border-radius: 3px;
-            background-color: $DisneyBlue;
-            color: white;
-            font-weight: 600;
-            padding: 5px;
-            margin-top: 10px;
-            @include flexFiller(row,center,center,10px);
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
-
-
     }
 }
