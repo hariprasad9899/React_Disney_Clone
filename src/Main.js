@@ -23,7 +23,7 @@ export default function Main() {
             <div className='container'>
 
                     <Routes>
-                        <Route path='/' element = {<Subscribe />}></Route>
+                        <Route path='/' element = {<Home />}></Route>
                         <Route path='/watch' element = {<Watch />}>
                             <Route path= ':imdbID' element = {<Watch />} />
                         </Route>
