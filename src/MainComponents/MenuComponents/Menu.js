@@ -37,7 +37,7 @@ export default function Menu() {
     // function that will change the active state, whenever user stops and moves out from the input box
     function handleInActive() {
         setSearchInput(prevSearchInput => {
-            return { ...prevSearchInput,active: false }
+            return { ...prevSearchInput,active: false, value: "" }
         })
     }
 
@@ -48,6 +48,11 @@ export default function Menu() {
         width: (searchInput.active) ? "25rem":"16rem",
         borderBottom: (searchInput.active) ? "1px solid rgb(106, 149, 243)":"1px solid rgba(245, 245, 245, 0.76)",
         backgroundImage: `url(${'./imgs/searchIcon.svg'})`
+    }
+
+    let SEARCH_RESULT_STYLE = {
+
+        display: (searchInput.value.length > 0) ? "block": "none"
     }
 
     //______________________________________________________________________________________________________________________________________
@@ -216,6 +221,8 @@ export default function Menu() {
                     onFocus = {handleActive}
                     style = {INPUT_STYLE}
                 ></input>
+
+                <div className="search-result" style={SEARCH_RESULT_STYLE}></div>
 
                 {width > 760 && <button onClick={() => navigate('/subscribe')}>SUBSCRIBE</button>}
 
