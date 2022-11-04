@@ -7,6 +7,7 @@ import '../../Sass/menu.scss';
 import Loginpop from "./Loginpop/Loginpop";
 import { BlurContext } from "../Context/BlurContext";
 import {useNavigate} from 'react-router-dom';
+import SearchResult from "./SearchResult";
 
 
 export default function Menu() {
@@ -52,7 +53,7 @@ export default function Menu() {
 
     let SEARCH_RESULT_STYLE = {
 
-        display: (searchInput.value.length > 0) ? "block": "none"
+        display: (searchInput.value.length > 0) ? "flex": "none"
     }
 
     //______________________________________________________________________________________________________________________________________
@@ -222,7 +223,11 @@ export default function Menu() {
                     style = {INPUT_STYLE}
                 ></input>
 
-                <div className="search-result" style={SEARCH_RESULT_STYLE}></div>
+                <div className="search-result" style={SEARCH_RESULT_STYLE}>
+
+                    <SearchResult searchVal = {searchInput.value} />
+
+                </div>
 
                 {width > 760 && <button onClick={() => navigate('/subscribe')}>SUBSCRIBE</button>}
 
