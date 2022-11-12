@@ -10,6 +10,7 @@ import Subscribe from './MainComponents/Subscribe/subscribe';
 import { ClickContext } from './MainComponents/Context/ClickContext';
 
 
+
 export default function Main() {
 
     const {blur,setBlur} = useContext(BlurContext);
@@ -21,19 +22,19 @@ export default function Main() {
 
     return(
 
-            <div className='container'>
-                        <Routes>
-                            <Route exact path='/' element = {<Home />}></Route>
-                            <Route path='/watch' element = {<Watch />}>
-                                <Route exact path= ':imdbID' element = {<Watch />} />
-                            </Route>
-                            <Route path='/subscribe' element = {<Subscribe />}></Route>
-                        </Routes>
-                <Footer />
+        <div className='container'>
+                    <Routes>
+                        <Route href='/' exact path='/' element = {<Home />}></Route>
+                        <Route exact path='/watch' element = {<Watch />}>
+                            <Route exact path= ':imdbID' element = {<Watch />} />
+                        </Route>
+                        <Route path='/subscribe' element = {<Subscribe />}></Route>
+                    </Routes>
+                    <Footer />
 
-                <div style={overlayStyle}  onClick = {() => setBlur(false)}  className='overLay'></div>
+            <div style={overlayStyle}  onClick = {() => setBlur(false)}  className='overLay'></div>
 
-            </div>
+        </div>
 
     )
 }

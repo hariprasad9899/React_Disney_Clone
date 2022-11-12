@@ -46,7 +46,7 @@ export default function WatchOptions(){
                     <FontAwesomeIcon icon={faPlay} />
                     <h3>Watch Movie</h3>
                 </a>
-
+                
                 
                 <a className="addBtn">
                     {(watchState) ? <FontAwesomeIcon className="addFont check" icon={faCheck} onClick={addWatchlist} />
