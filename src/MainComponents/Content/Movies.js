@@ -7,6 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import Slider from "react-slick";
 import SliderSettings from "../Helpers/SliderSettings";
+import LoaderContent from "./LoaderContent";
 
 
 export default function Movies({genre}) {
@@ -43,9 +44,22 @@ export default function Movies({genre}) {
             <a className="genTitle">{movieDb[genre].title}</a>
 
                 <div className = {`movieList genre-${genre}`} > 
+
+                    {(loadState) ? <LoaderContent /> 
+                    : 
                     <Slider {...SliderSettings}>
-                        { (loadState) ? <h1>Loading</h1> : MOVIESJSX }
+                        {MOVIESJSX }
                     </Slider>
+                    }
+
+
+                    {/* <Slider {...SliderSettings}>
+                        { (loadState) ? <h1>Loading</h1> : MOVIESJSX }
+                    </Slider> */}
+
+                    {/* <Slider {...SliderSettings}>
+                        { (loadState) ? <h1>Loading</h1> : MOVIESJSX }
+                    </Slider> */}
                 </div>
 
         </div>

@@ -19,6 +19,7 @@ $ActiveBackground: #223462;
 
     .plan-info {
         width: 60%;
+        text-align: left;
         @include flexFiller(column,flex-start,center,0px);
 
         .spl-line {

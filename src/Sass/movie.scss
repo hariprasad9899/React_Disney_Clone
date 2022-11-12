@@ -99,7 +99,7 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
         z-index: 1002;
         color: white;
         position: relative;
-        background-color: rgb(37, 48, 127);
+        background-color: rgb(16, 47, 91);
         transition: 0.5s ease;
         border-radius: 10px;
         @include setBackground(no-repeat,center,center,cover);
@@ -237,26 +237,41 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
 
 
 @media screen and (max-width:2000px) {
-    .movieCard {
-        width:12rem;
-        height: 17rem;
+
+    .slick-slide  {
+        .movieCard {
+            height: 18rem;
+        }
     }
 }
 
 @media screen and (max-width:1300px) {
-    .movieCard {
-        width:10rem;
-        height: 15rem;
+
+    .slick-slide  {
+        .movieCard {
+            height: 15rem;
+        }
     }
 }
 
 @media screen and (max-width:1000px) {
-    .movieCard {
-        width:9rem;
-        height:8rem;
+
+    .slick-slide  {
+        .movieCard {
+            height: 15rem;
+        }
     }
 }
 
+
+@media screen and (max-width:600px) {
+
+    .slick-slide  {
+        .movieCard {
+            height: 15rem;
+        }
+    }
+}
 
 .content-container {
 
