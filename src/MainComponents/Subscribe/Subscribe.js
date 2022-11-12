@@ -19,17 +19,19 @@ export default function Subscribe(){
         containerElement = element;
     };
 
+    const exceptionClassNames = ['inner-plan-div','content-row','plan-info','plan-super','plan-premium']
 
     useEffect(() => {
         
         function detectScroll(e) {
-            if(e.deltaY < 0)  {
-                setScrollState(false)
-                console.log("scrolling up")
-            } 
-            else if(e.deltaY > 0) {
-                setScrollState(true);
-                console.log("scrolling down")
+
+            if(!exceptionClassNames.includes(e.target.className))  {
+                if(e.deltaY < 0)  {
+                    setScrollState(false)
+                } 
+                else if(e.deltaY > 0) {
+                    setScrollState(true);
+                }
             }
         }
 
@@ -37,9 +39,6 @@ export default function Subscribe(){
 
         return containerElement.removeEventListener('wheel',(e) => detectScroll(e))
     })
-
-
-
 
 
     return (
