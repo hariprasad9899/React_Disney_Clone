@@ -9,9 +9,6 @@ import shortenPara from "../Helpers/ShortenPara";
 
 export default function WatchFlex({info}){
 
-
-
-    
     return (
         <div className="watchFlexCard">
 
