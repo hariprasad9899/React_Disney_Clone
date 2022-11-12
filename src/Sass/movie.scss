@@ -31,7 +31,6 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
         &:hover {
             color: dodgerblue;
             cursor: pointer;
-            
         }
     }
     position: relative;
@@ -45,28 +44,37 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
     visibility: hidden;
 }
 
-.slick-slider .slick-arrow {
-    position: absolute;
-    height: 100%;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: 0.8s ease;
+.slick-slider  {
+    .slick-arrow {
+
+        position: absolute;
+        height: 100%;
+        // z-index: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: 0.8s ease;
+
+    }
+    
 }
 
 .slick-slider {
 
     .slick-next {
-        right: -2%;
-        width: 4%;
+        right: -2.7%;
+        width: 5%;
+        z-index: 1000;
         background: linear-gradient(to right, transparent, black);
+        // background: linear-gradient(to right, transparent, red);
     }
     .slick-prev {
         left: -2%;
-        width: 4%;
+        width: 3%;
+        z-index: 1000;
         background: linear-gradient(to right, black ,transparent);
+        // background: linear-gradient(to right, red ,transparent);
     }
 }
 
@@ -83,38 +91,49 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
     }
 }
 
-.movieCard {
-   
-    z-index: 1002;
-    color: white;
-    position: relative;
-    background-color: rgb(37, 48, 127);
-    transition: 0.5s ease;
-    border-radius: 10px;
-    @include setBackground(no-repeat,center,center,cover);
-    .poster {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    };
+.slick-slider {
+
     
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.25);
-        z-index: 1003;
-        transition: 0.3s ease;
-        transition-delay: 0.2s;
-        .infoCard {
-            opacity: 1;
+    .movieCard {
+    
+        z-index: 1002;
+        color: white;
+        position: relative;
+        background-color: rgb(37, 48, 127);
+        transition: 0.5s ease;
+        border-radius: 10px;
+        @include setBackground(no-repeat,center,center,cover);
+        .poster {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        };
+        
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.35);
+            transition: 0.3s ease;
+            transition-delay: 0.2s;
+            z-index: 100000093;
+            .infoCard {
+                opacity: 1;
+            }
+            & &.slick-arrow {
+               .slick-next, .slick-prev {
+                    z-index: -1000;
+               }
+            }   
+
         }
-        
-        
+        .moviePlot {
+            color: $LIGHT_GRAY_FONT;
+            font-weight: 500;
+        }
     }
-    .moviePlot {
-        color: $LIGHT_GRAY_FONT;
-        font-weight: 500;
-    }
-} 
+
+    
+}
+
 
 .infoCard {
     position: absolute;
@@ -201,6 +220,9 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
     animation-duration: 1.5s;
 }
 
+
+
+
 @keyframes slowlyShow {
     0%{ top: 90vh; opacity: 0;}
     50%{top: 85vh; opacity: 1;}
@@ -232,5 +254,30 @@ $WATCHBACKGROUND: rgba(133, 133, 133, 0.31);
     .movieCard {
         width:9rem;
         height:8rem;
+    }
+}
+
+
+.content-container {
+
+    .movie-container {
+
+        .movieList {
+            
+            .slick-slider {
+
+                .slick-list {
+
+                    .slick-track {
+
+                        .slick-slide {
+
+
+                        }
+
+                    }
+                }
+            }
+        }
     }
 }

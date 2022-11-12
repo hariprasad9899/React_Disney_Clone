@@ -25,8 +25,9 @@ const SliderSettings = {
     infinite: false,
     arrows: true,
     speed: 1000,
-    slidesToShow: 7.15,
+    slidesToShow: 7.25,
     slidesToScroll: 6,
+    rtl: true,
     responsive: [
         {
             breakpoint: 1024,

@@ -81,7 +81,7 @@ export default function MovieCard({movieInfo}){
                     </div>
                 }
                 
-            </div>
+            </div>  
             { popupState && <PopupPortal added = {watchListState} visibleState={watchListState} /> }
         </div> 
 
