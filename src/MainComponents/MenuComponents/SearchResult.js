@@ -87,7 +87,7 @@ export default function SearchResult({searchVal,setSearchInput}){
             <div key = {nanoid()} className="movie-result" onClick={() => navigateToWatch(item.imdbID)}>
 
                 <div className="movie-poster">
-                    <img className="img-poster" src={item.Poster}></img>
+                    <img className="img-poster" src={item.Poster} alt = " :) Img not found"></img>
                 </div>
 
                 <div className="movie-plot">
