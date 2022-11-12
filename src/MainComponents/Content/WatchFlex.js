@@ -14,7 +14,7 @@ export default function WatchFlex({info}){
 
             <div className="watchFlexContent">
 
-                <img className="posterImg" src={info.Poster}></img>        
+                <img className="posterImg" src={info.Poster} alt=" :( Image not found"></img>        
 
                 <h2 className="movieTitle">{info.Title}</h2>   
                 

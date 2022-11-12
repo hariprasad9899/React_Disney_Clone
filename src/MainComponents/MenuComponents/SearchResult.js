@@ -55,7 +55,7 @@ export default function SearchResult({searchVal,setSearchInput}){
             let res = await fetch(`http://www.omdbapi.com/?t=${item}&apikey=f2a05d22`);
             let data = await res.json();
             if(data.Response === "True") {
-                if(movieResults.length >= 7) {
+                if(movieResults.length >= 4) {
 
                     setMovieResults((prevMovies) => {
                         return prevMovies.slice(-7)

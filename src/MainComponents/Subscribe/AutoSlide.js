@@ -16,10 +16,11 @@ export default function AutoSlide(){
         movieNames.forEach(async item => {
             let res = await fetch(`http://www.omdbapi.com/?t=${item}&apikey=f2a05d22`);
             let data = await res.json();
-            // console.log(data)
-            setMovieData(prevMovies => { 
-                return prevMovies.concat(data)
-            })
+            if(data.Response === "True") {
+                setMovieData(prevMovies => { 
+                    return prevMovies.concat(data)
+                })
+            }
         })        
     }, [])
     

@@ -22,11 +22,12 @@ export default function Movies({genre}) {
         selectedGenre.forEach(async item => {
             let res = await fetch(`http://www.omdbapi.com/?t=${item}&apikey=f2a05d22`);
             let data = await res.json();
-            // console.log(data)
-            setMovies(prevMovies => { 
-                return prevMovies.concat(data)
-            })
-            setLoadState(false)
+            if(data.Response === "True") {
+                setMovies(prevMovies => { 
+                    return prevMovies.concat(data)
+                })
+                setLoadState(false)
+            }
         })        
     }, [])
 

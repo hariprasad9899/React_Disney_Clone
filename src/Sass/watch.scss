@@ -142,6 +142,22 @@
     }
 }
 
+@media screen and (max-height: 900px) {
+    .watchContent {
+        .watchFlexCard {
+            height: 600px;
+        }
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .watchContent {
+        .watchFlexCard {
+            height: 400px;
+        }
+    }
+}
+
 @media screen and (max-width: 900px) {
     
     .watchFlexCard {
