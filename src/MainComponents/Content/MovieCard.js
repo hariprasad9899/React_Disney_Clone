@@ -47,7 +47,6 @@ export default function MovieCard({movieInfo}){
     }
 
     const navigateToWatch = (e) => {
-        console.log(e.target);
         if(e.target.className !== 'watchList' && e.target.className !== 'playButton') {
             navigate(`/watch/${movieInfo.imdbID}`);
         }

@@ -7,6 +7,8 @@ import Footer from './MainComponents/Content/Footer';
 import './Sass/index.scss';
 import { BlurContext } from './MainComponents/Context/BlurContext';
 import Subscribe from './MainComponents/Subscribe/subscribe';
+import { ClickContext } from './MainComponents/Context/ClickContext';
+
 
 export default function Main() {
 
@@ -15,26 +17,23 @@ export default function Main() {
     let overlayStyle = {
         display: (blur) ? 'block': 'none'
     }
-     
+    
 
     return(
-        
 
             <div className='container'>
-
-                    <Routes>
-                        <Route path='/' element = {<Home />}></Route>
-                        <Route path='/watch' element = {<Watch />}>
-                            <Route path= ':imdbID' element = {<Watch />} />
-                        </Route>
-                        <Route path='/subscribe' element = {<Subscribe />}></Route>
-                    </Routes>
-                    
+                        <Routes>
+                            <Route exact path='/' element = {<Home />}></Route>
+                            <Route path='/watch' element = {<Watch />}>
+                                <Route exact path= ':imdbID' element = {<Watch />} />
+                            </Route>
+                            <Route path='/subscribe' element = {<Subscribe />}></Route>
+                        </Routes>
                 <Footer />
 
                 <div style={overlayStyle}  onClick = {() => setBlur(false)}  className='overLay'></div>
 
             </div>
-     
+
     )
 }

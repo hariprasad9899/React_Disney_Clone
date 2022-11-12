@@ -1,23 +1,52 @@
 import { nanoid } from "nanoid";
 import React, { useState, useEffect } from "react";
+import {useNavigate, useLocation} from 'react-router-dom';
+import Watch from "../Content/Watch";
 
-export default function SearchResult({searchVal}){
+export default function SearchResult({searchVal,setSearchInput}){
     
     const [searchNames, setSearchNames] = useState([]);
     const [movieResults, setMovieResults] = useState([]);
     const uniqueMovies = [];
 
+    const navigate = useNavigate();
+    const location1 = useLocation();
+
+    const navigateToWatch = (imdb) => {
+        navigate(`/watch/${imdb}`);
+        setSearchInput(prevState => {
+            return {...prevState,value:"", active:false}
+        })
+    }
+
 
     useEffect(() => {
+
+        if(searchVal.length === 0) {
+
+            setSearchNames(() => {
+                return [];
+            })
+
+            setMovieResults(() => {
+                return [];
+            })
+
+
+        } else {
+
+            setSearchNames((prevSearchNames) => {
+                if(searchVal.length > 0) {
+                    return [...prevSearchNames, searchVal];
+                } else {
+                    return [...prevSearchNames]
+                }
+            })
+
+        }
         
-        setSearchNames((prevSearchNames) => {
-            if(searchVal.length > 0) {
-                return [...prevSearchNames, searchVal];
-            } else {
-                return [...prevSearchNames]
-            }
-        })
-               
+        
+
     }, [searchVal])
 
     useEffect(() => {
@@ -34,7 +63,16 @@ export default function SearchResult({searchVal}){
                 }
 
                 setMovieResults(prevMovies => { 
-                    return prevMovies.concat(data)
+
+                    let sRes = prevMovies.every((item) => {
+                        if(item.imdbID !== data.imdbID) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    })
+
+                    return (sRes) ? [data,...prevMovies] : prevMovies;
                 }) 
             }
         })  
@@ -42,11 +80,11 @@ export default function SearchResult({searchVal}){
     }, [searchNames])
 
 
-
-    let resultJSX = movieResults.map((item) => {
+    let resultJSX = movieResults.map((item) => {    
 
         return (
-            <div key = {nanoid()} className="movie-result">
+
+            <div key = {nanoid()} className="movie-result" onClick={() => navigateToWatch(item.imdbID)}>
 
                 <div className="movie-poster">
                     <img className="img-poster" src={item.Poster}></img>
@@ -61,12 +99,6 @@ export default function SearchResult({searchVal}){
         )
 
     })
-
-
-    useEffect(() => {
-        console.log(movieResults)
-    },[movieResults])
-
 
     return (
             <>

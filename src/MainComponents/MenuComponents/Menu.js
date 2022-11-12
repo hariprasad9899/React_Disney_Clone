@@ -6,7 +6,7 @@ import Channel from '../MenuComponents/Channel';
 import '../../Sass/menu.scss';
 import Loginpop from "./Loginpop/Loginpop";
 import { BlurContext } from "../Context/BlurContext";
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 import SearchResult from "./SearchResult";
 
 
@@ -36,10 +36,14 @@ export default function Menu() {
     }
 
     // function that will change the active state, whenever user stops and moves out from the input box
-    function handleInActive() {
-        setSearchInput(prevSearchInput => {
-            return { ...prevSearchInput,active: false, value: "" }
-        })
+    function handleInActive(e) {
+
+        if(e.target.className !== 'search-result' && e.target.className !== 'movie-result') {
+            setSearchInput(prevSearchInput => {
+                return { ...prevSearchInput,active: false, value: "" }
+            })
+        }
+        
     }
 
 
@@ -170,6 +174,12 @@ export default function Menu() {
     }
 
     const navigate = useNavigate()
+    const location = useLocation();
+    const navigateSubscribe = () => {
+
+        navigate(`/subscribe`);
+    }
+
     return (
         <div className="topMenu" >
 
@@ -211,21 +221,21 @@ export default function Menu() {
 
             <div className="search-section">
                 
-                {width < 760 && <button className="minBtn" onClick={() => navigate(`/subscribe`)}>SUBSCRIBE</button>}
+                {width < 760 && <button className="minBtn" onClick={navigateSubscribe }>SUBSCRIBE</button>}
 
                 <input type="text" 
                     placeholder="Search"
                     value = {searchInput.value}
                     onChange = {(e) => handleSearchInput(e)}
                     onInput = {handleActive}
-                    onBlur = {handleInActive}
+                    // onBlur = {handleInActive}
                     onFocus = {handleActive}
                     style = {INPUT_STYLE}
                 ></input>
 
                 <div className="search-result" style={SEARCH_RESULT_STYLE}>
 
-                    <SearchResult searchVal = {searchInput.value} />
+                    <SearchResult searchVal = {searchInput.value} setSearchInput = {setSearchInput} />
 
                 </div>
 

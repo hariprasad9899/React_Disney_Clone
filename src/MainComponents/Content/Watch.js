@@ -8,6 +8,7 @@ export default function Watch(){
 
     const {imdbID} = useParams();
     // const imdbID = 'tt4169250';
+    console.log(imdbID);
     const [movieInfo, setMovieInfo] = useState('');
 
 
@@ -17,7 +18,7 @@ export default function Watch(){
         then(res => res.json()).
         then(data => setMovieInfo(data));
         
-    }, [])
+    }, [imdbID])
 
 
     return (    

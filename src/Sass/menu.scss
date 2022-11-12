@@ -109,11 +109,17 @@ $SEACRCHBOX:rgba(245, 245, 245, 0.76);
     .search-result {
         position: absolute;
         top: 35px;
+        // top: 100px;
         left: 0;
         width: 25rem;
         // height: 500px;
         background-color: #0c111b;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
         @include flexFiller(column,center,center,10px);
+        transition: 0.5s ease;
 
         .movie-result {
 
@@ -121,6 +127,7 @@ $SEACRCHBOX:rgba(245, 245, 245, 0.76);
             height: 90px;
             margin: auto;
             background-color: #192133;
+            border-radius: 3px;
 
             @include flexFiller(row,flex-start,center,0px);
 
@@ -131,6 +138,8 @@ $SEACRCHBOX:rgba(245, 245, 245, 0.76);
                 .img-poster {
                     top: 0;
                     left: 0;
+                    border-top-left-radius: 3px;
+                    border-top-right-radius: 3px;
                     position: absolute;
                     width: 100%;
                     height: 100%;
@@ -152,7 +161,10 @@ $SEACRCHBOX:rgba(245, 245, 245, 0.76);
                     color: rgb(173, 169, 169);
                 }
             }
-
+            
+            &:hover {
+                cursor: pointer;
+            }
 
 
         }
