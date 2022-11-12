@@ -176,7 +176,6 @@ export default function Menu() {
     const navigate = useNavigate()
     const location = useLocation();
     const navigateSubscribe = () => {
-
         navigate(`/subscribe`);
     }
 

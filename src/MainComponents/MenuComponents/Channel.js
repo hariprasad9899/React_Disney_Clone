@@ -6,20 +6,24 @@ import { faMasksTheater } from '@fortawesome/free-solid-svg-icons';
 
 export default function Channel({hoverState,onmouseOutBurger}) {
 
+    // let hoverClassName = (hoverState) ? "channel channelFadeIn" : "channel channelFadeOut";
+    let hoverClassName = `channel ${(hoverState) ? "channelFadeIn" : "channelFadeOut"}`
+
     return (
-        <div className= { `channel ${(hoverState) ? "channelFadeIn": "channelFadeOut"}`}>
-            <li>
+
+        <div className= {hoverClassName}>
+            <div className="opt-elem">
                 <a><FontAwesomeIcon icon={faTv} /></a>
                 <a>Channels</a>
-            </li>
-            <li>
+            </div>
+            <div className="opt-elem">
                 <a><FontAwesomeIcon icon={faLanguage} /></a>
                 <a>Languages</a>
-            </li>
-            <li>
+            </div>
+            <div className="opt-elem">
                 <a><FontAwesomeIcon icon={faMasksTheater} /></a>
                 <a>Genres</a>
-            </li>
+            </div>
         </div>
     )
 

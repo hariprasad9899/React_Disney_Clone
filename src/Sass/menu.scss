@@ -249,33 +249,23 @@ $SEACRCHBOX:rgba(245, 245, 245, 0.76);
     top: 40px;
     left: -10px;
     width: 150px;
+    height: auto;
     padding: 10px 0px 10px 0px;
     z-index: 99;
     background-color: #192133;
     @include flexFiller(column,flex-start,center,0px);
     color: rgba(245, 245, 245, 0.91);
     font-size: 0.8rem;
-}
-
-.channel {
-    li {    
+    overflow: hidden;
+    .opt-elem {    
+        position: relative;
         width: 100%;
+        height: auto;
         padding: 12px 12px 12px 20px;
         @include flexFiller(row,center,flex-start,30px);
         &:hover {
             background-color: black;
         }
-    }
-    
-}
-
-
-.channelFadeOut {
-    height: 0px;
-    padding: 0px;
-    transition: 0.5s ease-in-out;
-    li {
-        display: none;
     }
 }
 
@@ -283,11 +273,16 @@ $SEACRCHBOX:rgba(245, 245, 245, 0.76);
     height: 120px;
     opacity: 1;
     padding: 10px 0px 10px 0px;
-    // transition: 0.5s ease;
-    li {
-        display: flex;
-    }
+    transition: 0.5s ease;
 }
+
+.channelFadeOut {
+    height: 0px;
+    padding: 0px;
+    transition: 0.5s ease-in-out;
+}
+
+
 
 @media  screen and (max-width: 1000px) {
     
