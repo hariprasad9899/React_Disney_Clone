@@ -5,6 +5,7 @@ import Loginpop from "../MenuComponents/Loginpop/Loginpop";
 import {useNavigate} from 'react-router-dom';
 import '../../Sass/subscribe.scss';
 import { BlurContext } from "../Context/BlurContext";
+import DisneyLogo from "../SVGIcons/DisneyLogo";
 
 export default function SubscribeMenu({scrollState}){
     
@@ -57,7 +58,7 @@ export default function SubscribeMenu({scrollState}){
             <div className="topMenu" style={MENUBG}>
 
                 <div className="plan-state">
-                    <img src= '../imgs/disneyLogo.svg'></img>
+                    <DisneyLogo />
                     <div className="select-plan">
                         <span className="active-sel">Select Plan </span>
                         <span><FontAwesomeIcon className="angle" icon={faAngleRight} /></span>

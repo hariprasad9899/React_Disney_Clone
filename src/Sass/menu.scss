@@ -21,6 +21,12 @@ $SEACRCHBOX:rgba(245, 245, 245, 0.76);
 
 .options-section {
     gap: 1.5rem;
+    .logo-btn {
+        margin-top: -6px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 .nav-options {

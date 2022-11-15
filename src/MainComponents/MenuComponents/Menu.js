@@ -8,7 +8,8 @@ import Loginpop from "./Loginpop/Loginpop";
 import { BlurContext } from "../Context/BlurContext";
 import {useNavigate, useLocation} from 'react-router-dom';
 import SearchResult from "./SearchResult";
-
+import logoImg from '../../Imgs/disneyLogo.svg';
+import DisneyLogo from '../SVGIcons/DisneyLogo';
 
 export default function Menu() {
 
@@ -191,7 +192,10 @@ export default function Menu() {
                     <Channel  hoverState = {burgerHoverState}/>
                 </div>
 
-                <img src= '../imgs/disneyLogo.svg'></img>
+                {/* <img className="disney-logo" onClick={() => navigate('/')} src= '../Imgs/disneyLogo.svg'></img> */}
+
+                {/* <img className="disney-logo" onClick={() => navigate('/')} src={logoImg}></img> */}
+                <DisneyLogo />
 
                 <nav className="nav-options">
 

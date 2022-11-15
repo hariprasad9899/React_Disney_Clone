@@ -23,13 +23,15 @@ export default function Main() {
     return(
 
         <div className='container'>
+                    
                     <Routes>
-                        <Route href='/' exact path='/' element = {<Home />}></Route>
-                        <Route exact path='/watch' element = {<Watch />}>
-                            <Route exact path= ':imdbID' element = {<Watch />} />
-                        </Route>
-                        <Route path='/subscribe' element = {<Subscribe />}></Route>
+                            <Route index  path='/' element = {<Home />}></Route>
+                            <Route path='/watch' element = {<Watch />}>
+                                <Route path= ':imdbID' element = {<Watch />} />
+                            </Route>
+                            <Route path='/subscribe' element = {<Subscribe />}></Route>
                     </Routes>
+
                     <Footer />
 
             <div style={overlayStyle}  onClick = {() => setBlur(false)}  className='overLay'></div>
