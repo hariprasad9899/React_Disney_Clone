@@ -64,5 +64,9 @@ module.exports = {
             }
             
         ]
+    },
+
+    resolve: {
+        extensions: ['.js', '.json', '.wasm'], // Add your extensions here.
     }
 }
