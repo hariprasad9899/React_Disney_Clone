@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import '../../Sass/footer.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import Googlebadge from "../SVGIcons/googleBadge";
+import Googlebadge from "../SVGIcons/Googlebadge";
 import Applebadge from "../SVGIcons/AppleBadge";
 
 

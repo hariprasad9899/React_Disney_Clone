@@ -6,7 +6,7 @@ import Watch from './MainComponents/Content/Watch';
 import Footer from './MainComponents/Content/Footer';
 import './Sass/index.scss';
 import { BlurContext } from './MainComponents/Context/BlurContext';
-import Subscribe from './MainComponents/Subscribe/subscribe';
+import Subscribe from './MainComponents/Subscribe/Subscribe';
 import { ClickContext } from './MainComponents/Context/ClickContext';
 
 

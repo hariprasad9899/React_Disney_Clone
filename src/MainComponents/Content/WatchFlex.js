@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import '../../Sass/watch.scss';
-import runtime from "../Helpers/runtime";
+import runtime from "../Helpers/CalcRuntime";
 import WatchOptions from "./WatchOptions";
 import shortenPara from "../Helpers/ShortenPara";
-
 
 
 

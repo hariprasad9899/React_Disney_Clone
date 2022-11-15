@@ -6,7 +6,7 @@ import { faL, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import PopupPortal from "./PopupPortal";
-import runtime from "../Helpers/runtime";
+import runtime from "../Helpers/CalcRuntime";
 import {useNavigate} from 'react-router-dom';
 
 export default function MovieCard({movieInfo}){
